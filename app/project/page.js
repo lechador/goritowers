@@ -10,7 +10,7 @@ export const metadata = {
   description: 'გორითაურსი',
 }
 export default async function page() {
-  const {data} = await axios.get(`http://${process.env.WEBSITE_URL}/api/blocks`);
+  const {data} = await axios.get(`https://${process.env.next_public_site_url}/api/blocks`);
   return (
     <>
     <div className="relative w-full">
