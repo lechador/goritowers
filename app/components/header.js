@@ -26,7 +26,6 @@ export default function Header() {
     <li><Link href="/contact">კონტაქტი</Link></li>
     </ul>
   </div>
-  <CallModal />
 </div>
   )
 }

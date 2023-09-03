@@ -4,7 +4,7 @@ import axios from "axios";
 import { notFound } from 'next/navigation'
 
 export default async function page({params}) {
-  const floorData = await axios.get(`http://localhost:3000/api/blocks/${params.block}/floors/${params.floor}`);
+  const floorData = await axios.get(`${process.env.WEBSITE_URL}/api/blocks/${params.block}/floors/${params.floor}`);
   const floor = floorData.data.floor
   const apartments = floorData.data.apartments
 

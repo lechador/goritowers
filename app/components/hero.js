@@ -20,7 +20,7 @@ export default function Hero() {
         console.log("Max Area:", maxArea);
 
         try {
-            const searchData = await axios.post("http://localhost:3000/api/apartments/search", {
+            const searchData = await axios.post("/api/apartments/search", {
                 "min-price": minPrice,
                 "max-price": maxPrice,
                 "min-area": minArea,
