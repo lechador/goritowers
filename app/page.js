@@ -1,11 +1,20 @@
+import Hero from "./components/hero"
+import HomeOngoingProject from "./components/homeOngoingProject"
+import LoanCalc from "./components/loanCalc"
+import PaymentDetails from "./components/paymentDetails"
+import TextComponent from "./components/textComponent"
+
 export const metadata = {
   title: 'გორითაუერსი',
   description: 'გორითაურსი',
 }
 export default function Home(){
   return (
-      <main>
-        <h1>Home</h1>
-      </main>
+      <> 
+        <Hero />
+        <HomeOngoingProject />
+        <LoanCalc />
+        <PaymentDetails />
+      </>
   )
 }

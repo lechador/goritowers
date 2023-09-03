@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CallModal from "./callModal";
 
 export default function Header() {
   return (
@@ -25,9 +26,7 @@ export default function Header() {
     <li><Link href="/contact">კონტაქტი</Link></li>
     </ul>
   </div>
-  <div className="navbar-end">
-    <a className="btn">შეუკვეთე ზარი</a>
-  </div>
+  <CallModal />
 </div>
   )
 }

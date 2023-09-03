@@ -3,7 +3,7 @@ import { register } from 'swiper/element';
 import ComponentTitle from './componentTitle';
 register();
 
-export default function imageGallery() {
+export default function ImageGallery({theme}) {
     const images = [
         '/image.jpg',
         '/image.jpg',
@@ -12,7 +12,7 @@ export default function imageGallery() {
         '/image.jpg'
     ]
     return (
-        <div className='pt-6 pb-10 px-4 ' data-theme="garden"> 
+        <div className='pt-6 pb-10 px-4 ' data-theme={theme}> 
             <ComponentTitle title="გალერეა" />
             <swiper-container
                     slides-per-view="2"

@@ -1,8 +1,8 @@
 
-export default function ChooseBlockCard() {
+export default function ChooseBlockCard( {image} ) {
   return (
     <div className="card w-full glass">
-        <figure><img src="/block-test.png" alt="block"/></figure>
+        <figure><img src={image} alt="block"/></figure>
     </div>
   )
 }

@@ -1,8 +1,8 @@
 
-export default function ChooseFloorCard() {
+export default function ChooseFloorCard({floor}) {
     return (
             <div className="card w-full glass py-6">
-                <figure><img src="/floor-test.jpg" alt="floor"/></figure>
+                <figure><img src={floor.floor_image} alt="floor"/></figure>
             </div>
     )
   }
