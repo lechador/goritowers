@@ -1,4 +1,11 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
 
-module.exports = nextConfig
+module.exports = {
+    webpack: (config) => {
+        config.externals.push({
+          sharp: 'commonjs sharp',
+          canvas: 'commonjs canvas'
+        })
+        return config
+      }
+};
