@@ -9,5 +9,5 @@ module.exports = {
       canvas: 'commonjs canvas'
     })
     return config
-  },
+  }
 }

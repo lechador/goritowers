@@ -14,7 +14,7 @@ export const metadata = {
   description: 'გორითაურსი',
 }
 export default async function page() {
-  const {data} = await axios.get(`${process.env.ENV == 'dev' ? 'http://localhost:3000' : ''}/api/blocks`);
+  const {data} = await axios.get(`${process.env.ENV == 'dev' ? 'http://localhost:3000' : `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`}/api/blocks`);
   
   return (
     <>
