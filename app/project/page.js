@@ -2,7 +2,6 @@ import ChooseBlock from "../components/chooseBlock";
 import LocationComponent from "../components/locationComponent";
 import PaymentDetails from "../components/paymentDetails";
 import TextComponent from "../components/textComponent";
-import axios from "axios";
 import dynamic from "next/dynamic";
 
 const ImageGallery = dynamic(() => import("../components/imageGallery"), {
@@ -13,9 +12,8 @@ export const metadata = {
   title: 'მიმდინარე პროექტი - გორითაუერსი',
   description: 'გორითაურსი',
 }
-export default async function page() {
-  const {data} = await axios.get(`${process.env.ENV == 'dev' ? 'http://localhost:3000' : `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`}/api/blocks`);
-  
+export default function page() {
+ 
   return (
     <>
     <div className="relative w-full">
@@ -29,9 +27,7 @@ export default async function page() {
       </div>
       <TextComponent theme="light" text="ახალი თანამედროვე საცხოვრებელი კომპლექსი არქი ნუცუბიძე 2 საბურთალოს IV პლატოზე, ლისის ტბიდან 10 წუთის სავალზე მდებარეობს. ამ კომპლექსის საცხოვრებელი სახლები დახვეწილი ექსტერიერით გარშემო არსებული ყველა სხვა შენობისგან გამოირჩევა. ფასადის მოსაპირკეთებლად ვენტილირებადი HPL პანელები და ელასტიკური აგური გამოიყენება. პროექტი მოიცავს კომერციულ ფართს, ღია და დახურულ ავტოსადგომს, გამწვანებულ ეზოს საბავშვო გასართობი სივრცითა და სპორტული მოედნით. მშენებლობა მიმდინარეობს გერმანული ბრენდის YTONG-ის ხანძარგამძლე, ეკოლოგიურად სუფთა, ენერგოეფექტური სამშენებლო ბლოკით, რომელიც ტემპერატურას ყველა სეზონზე ინარჩუნებს და 40%-ით ზოგავს ენერგიას, რის შედეგადაც კომუნალური გადასახადები მცირდება." />
     </div>
-    {
-      data && <ChooseBlock data={data.blocks} />
-    }
+    <ChooseBlock />
     <LocationComponent />
     <ImageGallery theme='garden' />
     <PaymentDetails />

@@ -1,11 +1,11 @@
-'use client'
-import { useState } from "react";
+import axios from "axios";
 import BlockCard from "./blockCard";
 import ComponentTitle from "./componentTitle";
 
 
-export default function ChooseBlock({data}) {
-  const [blocks, setBlocks] = useState(data)
+export default async function ChooseBlock() {
+  const {data} = await axios.get(`${process.env.ENV == 'dev' ? 'http://localhost:3000' : `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`}/api/blocks`);
+  const blocks = data.blocks
   return (
     <div data-theme="garden" className="pt-2 pb-8">
       <ComponentTitle title="აირჩიე ბლოკი" />
