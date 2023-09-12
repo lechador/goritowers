@@ -1,9 +1,13 @@
 import ChooseBlock from "../components/chooseBlock";
-import ImageGallery from "../components/imageGallery";
 import LocationComponent from "../components/locationComponent";
 import PaymentDetails from "../components/paymentDetails";
 import TextComponent from "../components/textComponent";
 import axios from "axios";
+import dynamic from "next/dynamic";
+
+const ImageGallery = dynamic(() => import("../components/imageGallery"), {
+  ssr: false
+})
 
 export const metadata = {
   title: 'მიმდინარე პროექტი - გორითაუერსი',

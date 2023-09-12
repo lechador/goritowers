@@ -4,7 +4,7 @@ import RequestCall from './components/requestCall'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
-import 'nprogress/nprogress.css';
+import 'leaflet/dist/leaflet.css'
 
 const inter = Inter({ subsets: ['latin'] })
 

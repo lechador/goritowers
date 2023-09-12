@@ -1,7 +1,7 @@
+import NotFoundCustomPage from "@/app/components/notFound";
+
 export default function NotFound() {
   return (
-    <div>
-      <p>არასწორი ლინკი</p>
-    </div>
+    <NotFoundCustomPage />
   )
 }

@@ -19,7 +19,7 @@ export default function RequestCall({showTitle, theme}) {
                     <option>ბინის შეძენა</option>
                     <option>სხვა</option>
                 </select>
-                <button className="btn btn-warning">შეუკვეთე ზარი</button>
+                <button className="btn bg-defaultOrange text-white tracking-wider">შეუკვეთე ზარი</button>
             </div>
     </div>
   )

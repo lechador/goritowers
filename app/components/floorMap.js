@@ -1,11 +1,12 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { fabric } from 'fabric';
+import { useRouter } from 'next/navigation';
 
-const FabricFloorMap = () => {
-  const [selectedFloor, setSelectedFloor] = useState(null);
-
+const FabricFloorMap = ({block}) => {
+  const router = useRouter()
+  const hoverColor = '#ff5801'
   useEffect(() => {
     const canvasWidth = 1000;
     const canvasHeight = 500;
@@ -19,9 +20,9 @@ const FabricFloorMap = () => {
             { x: 844, y: 421 },
             { x: 847, y: 360 },
         ],
-        fill: 'rgba(0, 123, 255, 0.5)',
+        fill: hoverColor,
         selectable: false,
-        opacity: 0,
+        opacity: 0
       },
       {
         points: [
@@ -30,13 +31,37 @@ const FabricFloorMap = () => {
           { x: 845, y: 363 }, 
           { x: 846, y: 312 },
         ],
-        fill: 'rgba(0, 123, 255, 0.5)',
+        fill: hoverColor,
         selectable: false,
-        opacity: 0,
+        opacity: 0
       },
+      {
+        points: [
+          { x: 121, y: 245 },
+          { x: 850, y: 252 }, 
+          { x: 849, y: 300 }, 
+          { x: 119, y: 279 },
+        ],
+        fill: hoverColor,
+        selectable: false,
+        opacity: 0
+      },
+      {
+        points: [
+          { x: 119, y: 206 },
+          { x: 120, y: 239 }, 
+          { x: 851, y: 243 }, 
+          { x: 851, y: 193 },
+        ],
+        fill: hoverColor,
+        selectable: false,
+        opacity: 0
+      }
     ];
-
-    polygons.forEach(polygonData => {
+    const polygonFloors = [
+      1, 2, 3, 4
+    ]
+    polygons.forEach((polygonData, index) => {
       const polygon = new fabric.Polygon(polygonData.points, {
         fill: polygonData.fill,
         selectable: polygonData.selectable,
@@ -57,8 +82,7 @@ const FabricFloorMap = () => {
       });
 
       polygon.on('mousedown', () => {
-        setSelectedFloor(14);
-        console.log(polygon);
+        router.push(`/project/${block}/${polygonFloors[index]}`)
       });
     });
   }, []);
