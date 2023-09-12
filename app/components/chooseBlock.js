@@ -1,4 +1,3 @@
-'use client'
 import BlockCard from "./blockCard";
 import ComponentTitle from "./componentTitle";
 
