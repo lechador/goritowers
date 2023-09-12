@@ -6,7 +6,7 @@ import axios from "axios";
 import { notFound } from 'next/navigation'
 
 export default async function page({ params }) {
-  const blockData = await axios.get(`${process.env.ENV=='dev' ? process.env.HOST : `https://${process.env.NEXT_PUBLIC_VERCEL_URL}:3000`}/api/blocks/${params.block}`);
+  const blockData = await axios.get(`${process.env.ENV=='dev' ? process.env.HOST : `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`}/api/blocks/${params.block}`);
   const block = blockData.data.block
   const floors = blockData.data.floors
 
