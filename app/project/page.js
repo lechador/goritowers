@@ -15,7 +15,7 @@ export const metadata = {
 }
 export default async function page() {
   const localUrl = process.env.HOST
-  const prodUrl = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+  const prodUrl = `https://goritowers-bye5k8p7c-lehiron.vercel.app/`
   const {data} = await axios.get(`${process.env.ENV=='prod' ? prodUrl : localUrl}/api/blocks`);
   return (
     <>
