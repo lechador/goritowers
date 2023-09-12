@@ -14,7 +14,9 @@ export const metadata = {
   description: 'გორითაურსი',
 }
 export default async function page() {
-  const {data} = await axios.get(`https://${process.env.NEXT_PUBLIC_VERCEL_URL}/api/blocks`);
+  const localUrl = process.env.HOST
+  const prodUrl = `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+  const {data} = await axios.get(`${process.env.ENV=='prod' ? prodUrl : localUrl}/api/blocks`);
   return (
     <>
     <div className="relative w-full">
