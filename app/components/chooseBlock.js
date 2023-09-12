@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 export default function ChooseBlock() {
   const [blocks, setBlocks] = useState([])
   const fetchData = async () => {
-    const response = await axios.get(`${process.env.NEXT_PUBLIC_VERCEL_ENV == 'production' ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` : 'http://localhost:3000'}/api/blocks`);
+    const response = await axios.get(`${process.env.NEXT_PUBLIC_VERCEL_ENV == 'production' ? `https://goritowers.vercel.app/` : 'http://localhost:3000'}/api/blocks`);
     const data = response.data.blocks
     setBlocks(data)
   }
