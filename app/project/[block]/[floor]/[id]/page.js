@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation'
 
 
 export default async function page({ params }) {
-  const apartmentData = await axios.get(`${process.env.ENV=='dev' ? process.env.HOST : `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`}/api/apartments/${params.id}`);
+  const apartmentData = await axios.get(`${process.env.ENV=='dev' ? 'http://localhost:3000' : ''}/api/apartments/${params.id}`);
   const apartment = apartmentData.data.apartment;
   if(!apartment) {
     notFound()
