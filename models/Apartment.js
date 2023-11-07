@@ -10,6 +10,10 @@ const ApartmentSchema = new mongoose.Schema({
     apartment_area: Number,
     living_area: Number,
     balcony_area: Number,
+    living_room_and_kitchen_area: Number, 
+    toilet_area: Number,
+    bedroom_area: Number, 
+    second_bedroom_area: Number,
     apartment_render_image: String,
     is_sold: Boolean
 })
