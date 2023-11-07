@@ -1,12 +1,11 @@
 import Footer from './components/footer'
 import Header from './components/header'
 import RequestCall from './components/requestCall'
-import './globals.css'
-import { Inter } from 'next/font/google'
+import { ToastContainer } from 'react-toastify';
 import localFont from 'next/font/local'
+import './globals.css'
 import 'leaflet/dist/leaflet.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import 'react-toastify/dist/ReactToastify.css';
 
 const ninoMtavruli = localFont({
   src: './bpg_nino_mtavruli_normal.woff2',
@@ -25,6 +24,7 @@ export default function RootLayout({ children }) {
         <Header />
         {children}
         <RequestCall showTitle={true} theme={'garden'} />
+        <ToastContainer />
         <Footer />
       </body>
     </html>
