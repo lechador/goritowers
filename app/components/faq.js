@@ -3,7 +3,7 @@ import ComponentTitle from "./componentTitle";
 
 export default function Faq() {
   return (
-    <section data-theme='garden' className="py-6">
+    <section data-theme='dark' className="py-6">
         <div className="container flex flex-col justify-center p-4 mx-auto md:p-8">
             <ComponentTitle title='ხშირად დასმული კითხვები' />
             <div className="flex flex-col divide-y sm:px-8 lg:px-12 xl:px-32 divide-gray-700">

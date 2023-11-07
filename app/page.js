@@ -19,9 +19,7 @@ export default function Home(){
         <Hero />
         <HomeOngoingProject />
         <LoanCalc />
-        <ReviewSlider />
         <Faq />
-        <Partners />
       </>
   )
 }
