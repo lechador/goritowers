@@ -20,7 +20,7 @@ export default function page() {
     <div className="relative w-full">
       <div className="relative">
         <div
-          className="bg-cover h-[60vh] lg:rounded-br-full bg-[url('https://static.archi.ge/%E1%83%9C%E1%83%A3%E1%83%AA%E1%83%A33/cover-00-00-20-19-still004-86b0fb65.jpg')]"
+          className="bg-cover h-[60vh] lg:rounded-br-full bg-[url('/project-image.webp')]"
         />
         <div className="absolute bottom-0 left-0 p-4 bg-black text-white lg:mb-20 lg:ml-20">
           <h2 className="text-5xl font-bold">გორი თაუერსი</h2>

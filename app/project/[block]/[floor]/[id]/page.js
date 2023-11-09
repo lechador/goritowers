@@ -20,11 +20,15 @@ export default async function page({ params }) {
         apartment_number={apartment.apartment_number} 
       />
       <ApartmentBody 
-        apartment_price={apartment.apartment_price}
         apartment_area={apartment.apartment_area}
         living_area={apartment.living_area}
         balcony_area={apartment.balcony_area}
         apartment_render_image={apartment.apartment_render_image}
+        living_room_and_kitchen_area={apartment.living_room_and_kitchen_area}
+        toilet_area={apartment.toilet_area}
+        bedroom_area={apartment.bedroom_area}
+        second_bedroom_area={apartment.second_bedroom_area}
+        third_bedroom_area={apartment.third_bedroom_area}
       />
     </>
   );
