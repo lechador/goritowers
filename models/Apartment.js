@@ -14,6 +14,7 @@ const ApartmentSchema = new mongoose.Schema({
     toilet_area: Number,
     bedroom_area: Number, 
     second_bedroom_area: Number,
+    third_bedroom_area: Number,
     apartment_render_image: String,
     is_sold: Boolean
 })
