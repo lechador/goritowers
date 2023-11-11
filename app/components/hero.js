@@ -6,27 +6,26 @@ import { useRouter } from "next/navigation";
 
 export default function Hero() {
     const router = useRouter()
-    const [minPrice, setMinPrice] = useState(50000);
-    const [maxPrice, setMaxPrice] = useState(100000);
     const [minArea, setMinArea] = useState(50);
-    const [maxArea, setMaxArea] = useState(60);
+    const [maxArea, setMaxArea] = useState(100);
     const [searchData, setSearchData] = useState();
+    const [checkedIndex, setCheckedIndex] = useState(0);
+
+    const handleCheckboxChange = (index) => {
+        console.log(index+1)
+        if (index === checkedIndex) {
+            return;
+        }
+        setCheckedIndex(index);
+    };
     const handleSearch = async (e) => {
         e.preventDefault();
-
-        console.log("Min Price:", minPrice);
-        console.log("Max Price:", maxPrice);
-        console.log("Min Area:", minArea);
-        console.log("Max Area:", maxArea);
-
         try {
             const searchData = await axios.post("/api/apartments/search", {
-                "min-price": minPrice,
-                "max-price": maxPrice,
                 "min-area": minArea,
-                "max-area": maxArea
+                "max-area": maxArea,
+                "bedrooms": checkedIndex+1
             });
-           
             setSearchData(searchData.data.apartments);
             window.my_modal_4.showModal();
         } catch (error) {
@@ -43,41 +42,43 @@ export default function Hero() {
                         <div className="card-body">
                             <form onSubmit={handleSearch}>
                                 <div className="flex flex-row"> 
-                                    <div className="mr-10">
-                                        <RangeInput 
-                                            title="მინიმალური ფასი" 
-                                            min={35000} 
-                                            max={500000} 
-                                            color={"orange-950"} 
-                                            unit={'ლ'} 
-                                            setMinPrice={setMinPrice}
-                                        />
-                                        <RangeInput 
-                                            title="მაქსიმალური ფასი" 
-                                            min={30000} 
-                                            max={500000} 
-                                            color={"orange-950"} 
-                                            unit={'ლ'} 
-                                            setMaxPrice={setMaxPrice}
-                                        />
-                                    </div>
                                     <div> 
                                         <RangeInput 
                                             title="მინიმალური ფართი" 
-                                            min={35} 
-                                            max={150} 
+                                            min={40} 
+                                            max={100} 
                                             color={"green-900"} 
                                             unit={'კვ.მ'} 
                                             setMinArea={setMinArea}
                                         />
                                         <RangeInput 
                                             title="მაქსიმალური ფართი" 
-                                            min={50} 
-                                            max={250} 
+                                            min={70} 
+                                            max={150} 
                                             color={"green-900"} 
                                             unit={'კვ.მ'} 
                                             setMaxArea={setMaxArea}
                                         />
+                                    </div>
+                                </div>
+
+                                <div> 
+                                    <h1 className="text-md">საძინებლების რაოდენობა</h1>
+                                    <div>
+                                    
+                                    <div className="form-control mx-10">
+                                    {[1, 2, 3].map((value, index) => (
+                                        <label key={index} className="label cursor-pointer">
+                                        <span className="text-2xl">{value}</span>
+                                        <input
+                                            type="checkbox"
+                                            className="checkbox"
+                                            checked={index === checkedIndex}
+                                            onChange={() => handleCheckboxChange(index)}
+                                        />
+                                        </label>
+                                    ))}
+                                    </div>
                                     </div>
                                 </div>
                                 <button className="btn btn-outline text-2xl">ბინის ძებნა</button>
@@ -89,10 +90,8 @@ export default function Hero() {
                                         <thead>
                                             <tr>
                                                 <th className="py-2 px-4">პროექტი</th>
-                                                <th className="py-2 px-4">ბლოკი</th>
                                                 <th className="py-2 px-4">სართული</th>
                                                 <th className="py-2 px-4">ბინა</th>
-                                                <th className="py-2 px-4">ფასი</th>
                                                 <th className="py-2 px-4">კვ.მ.</th>
                                                 <th className="py-2 px-4"></th>
                                             </tr>
@@ -107,10 +106,8 @@ export default function Hero() {
                                                     data-theme="garden"
                                                 >
                                                     <td className="px-4">{apartment.project_name}</td>
-                                                    <td className="px-4">{apartment.block_id}</td>
                                                     <td className="px-4">{apartment.floor_id}</td>
                                                     <td className="px-4">{apartment.apartment_number}</td>
-                                                    <td className="px-4">{apartment.apartment_price}</td>
                                                     <td className="px-4">{apartment.apartment_area}</td>
                                                     <td className="px-4">
                                                         <img
@@ -125,9 +122,7 @@ export default function Hero() {
                                         </tbody>
                                     </table>
                                 </div>
-                                    <div className="modal-action">
-                                        <button className="btn">დახურვა</button>
-                                    </div>
+                                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                                 </form>
                             </dialog>
                         </div>
