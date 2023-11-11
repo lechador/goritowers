@@ -1,3 +1,4 @@
+import FloorSwitch from "@/app/components/floorSwitch";
 import SelectApartment from "@/app/components/selectApartment";
 import FabricApartmentMap from "@/app/components/selectApartmentMap";
 import axios from "axios";
@@ -14,7 +15,7 @@ export default async function page({params}) {
     <div>
         <div className="flex flex-col items-center justify-center py-6" data-theme="dark"> 
             <h1 className="text-4xl font-bold mb-4">{floor.block_name} ბლოკი</h1>
-            <h2 className="text-3xl text-teal-500	font-bold">სართული {floor.floor_id}</h2>
+            <FloorSwitch floor={floor.floor_id} />
         </div>
         <SelectApartment params={params} apartments={apartments} />
         <FabricApartmentMap params={params} apartments={apartments} floor={floor} />
