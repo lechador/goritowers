@@ -5,7 +5,8 @@ const FloorSchema = new mongoose.Schema({
     block_id: Number,
     block_name: String,
     floor_id: Number,
-    floor_image: String
+    floor_image: String, 
+    floor_image_mobile: String
 })
 
 export default mongoose.models.Floor || mongoose.model('Floor', FloorSchema);

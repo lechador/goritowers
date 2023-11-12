@@ -4,5 +4,6 @@ import { Nineth14Floor } from "./9-14Floor";
 import { FirstFloor } from "./firstFloor";
 import { SecondFloor } from "./secondFloor";
 import { ThirdFloor } from "./thirdFloor";
+import { mobileFloor1 } from "./mobileFloor1";
 
-export { FirstFloor, SecondFloor, ThirdFloor, Fourth8Floor, Fifth7Floor, Nineth14Floor }
+export { FirstFloor, SecondFloor, ThirdFloor, Fourth8Floor, Fifth7Floor, Nineth14Floor, mobileFloor1 }
