@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-export default function getWindowWidth() {
+export default function GetWindowWidth() {
     const [windowSize, setWindowSize] = useState({
       width: undefined,
       height: undefined,

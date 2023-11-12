@@ -4,11 +4,11 @@ import { useEffect } from 'react';
 import { fabric } from 'fabric';
 import { useRouter } from 'next/navigation';
 import { FirstFloor, SecondFloor, ThirdFloor, Fourth8Floor, Fifth7Floor, Nineth14Floor, mobileFloor1 } from '../polygons';
-import getWindowWidth from './getWidth';
+import GetWindowWidth from './getWidth';
 
 
 const FabricApartmentMap = ({params, apartments, floor}) => {
-  const size = getWindowWidth()
+  const size = GetWindowWidth()
     const sortedApartments = [...apartments].sort((a, b) => a.apartment_number - b.apartment_number);
   const router = useRouter()
   useEffect(() => {
