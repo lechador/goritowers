@@ -17,19 +17,7 @@ const FabricApartmentMap = ({params, apartments, floor}) => {
     let canvasHeight = size.width>1024 ? 563 : 326;
     let selectedFloor;
     if(size.width<1000){
-      if(floor.floor_id === 1){ 
-          selectedFloor = mobileFloor1;
-      } else if(floor.floor_id === 2){ 
-          selectedFloor = mobileFloor1;
-      } else if(floor.floor_id === 3){ 
-          selectedFloor = mobileFloor1;
-      } else if(floor.floor_id === 4 || floor.floor_id === 8){ 
-          selectedFloor = mobileFloor1;
-      } else if (floor.floor_id === 5 || floor.floor_id === 6 || floor.floor_id === 7){ 
-          selectedFloor = mobileFloor1;
-      } else if (floor.floor_id === 9 || floor.floor_id === 10 || floor.floor_id === 11 || floor.floor_id === 12 || floor.floor_id === 13 || floor.floor_id === 14){ 
-          selectedFloor = mobileFloor1;
-      } 
+      selectedFloor = mobileFloor1;
     } else { 
         if(floor.floor_id === 1){ 
             selectedFloor = FirstFloor;
