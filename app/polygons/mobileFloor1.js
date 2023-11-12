@@ -11,7 +11,7 @@ export const mobileFloor1 = [
         { x: 5, y: 215 }     
       ],
       fill: hoverColor,
-      selectable: false,
+      selectable: true,
       opacity: 0
     },
     {
@@ -27,7 +27,7 @@ export const mobileFloor1 = [
             { x: 8, y: 311 } 
         ],
         fill: hoverColor,
-        selectable: false,
+        selectable: true,
         opacity: 0
       },
       {
@@ -38,7 +38,7 @@ export const mobileFloor1 = [
             { x: 68, y: 227 }
         ],
         fill: hoverColor,
-        selectable: false,
+        selectable: true,
         opacity: 0
       },
       {
@@ -50,7 +50,7 @@ export const mobileFloor1 = [
             { x: 70, y: 299 }
         ],
         fill: hoverColor,
-        selectable: false,
+        selectable: true,
         opacity: 0
       },
       {
@@ -61,7 +61,7 @@ export const mobileFloor1 = [
             { x: 120, y: 227 }
         ],
         fill: hoverColor,
-        selectable: false,
+        selectable: true,
         opacity: 0
       },
       {
@@ -72,7 +72,7 @@ export const mobileFloor1 = [
             { x: 121, y: 310 }
         ],
         fill: hoverColor,
-        selectable: false,
+        selectable: true,
         opacity: 0
       },
       {
@@ -83,7 +83,7 @@ export const mobileFloor1 = [
             { x: 174, y: 310 }
         ],
         fill: hoverColor,
-        selectable: false,
+        selectable: true,
         opacity: 0
       },
       {
@@ -96,7 +96,7 @@ export const mobileFloor1 = [
             { x: 222, y: 314 }
         ],
         fill: hoverColor,
-        selectable: false,
+        selectable: true,
         opacity: 0
       },
       {
@@ -107,7 +107,7 @@ export const mobileFloor1 = [
             { x: 250, y: 212 }
         ],
         fill: hoverColor,
-        selectable: false,
+        selectable: true,
         opacity: 0
       },
       {
@@ -118,7 +118,7 @@ export const mobileFloor1 = [
             { x: 250, y: 162 }
         ],
         fill: hoverColor,
-        selectable: false,
+        selectable: true,
         opacity: 0
       },
       {
@@ -129,7 +129,7 @@ export const mobileFloor1 = [
             { x: 174, y: 161 }
         ],
         fill: hoverColor,
-        selectable: false,
+        selectable: true,
         opacity: 0
       },
       {
@@ -140,7 +140,7 @@ export const mobileFloor1 = [
             { x: 250, y: 111 }
         ],
         fill: hoverColor,
-        selectable: false,
+        selectable: true,
         opacity: 0
       },
       {
@@ -153,7 +153,7 @@ export const mobileFloor1 = [
             { x: 175, y: 62 }
         ],
         fill: hoverColor,
-        selectable: false,
+        selectable: true,
         opacity: 0
       },
       {
@@ -167,7 +167,7 @@ export const mobileFloor1 = [
             { x: 306, y: 10 }
         ],
         fill: hoverColor,
-        selectable: false,
+        selectable: true,
         opacity: 0
       },
 ]
