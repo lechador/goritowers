@@ -1,131 +1,14 @@
-'use client'
-import axios from "axios";
-import RangeInput from "./rangeInput";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
+import HeroSearch from "./heroSearch"
+
 
 export default function Hero() {
-    const router = useRouter()
-    const [minArea, setMinArea] = useState(50);
-    const [maxArea, setMaxArea] = useState(100);
-    const [searchData, setSearchData] = useState();
-    const [checkedIndex, setCheckedIndex] = useState(0);
-
-    const handleCheckboxChange = (index) => {
-        console.log(index+1)
-        if (index === checkedIndex) {
-            return;
-        }
-        setCheckedIndex(index);
-    };
-    const handleSearch = async (e) => {
-        e.preventDefault();
-        try {
-            const searchData = await axios.post("/api/apartments/search", {
-                "min-area": minArea,
-                "max-area": maxArea,
-                "bedrooms": checkedIndex+1
-            });
-            setSearchData(searchData.data.apartments);
-            window.my_modal_4.showModal();
-        } catch (error) {
-            console.error("Error fetching data:", error);
-        }
-        
-    };
     return (
-        <div className="hero min-h-screen" style={{backgroundImage: 'url(/hero.jpg)'}}>
-            <div className="hero-overlay bg-opacity-60"></div>
-            <div className="hero-content text-center text-neutral-content">
-                <div className="">
+        <div className="flex min-h-screen">
+            <div className="w-1/2 bg-cover bg-center hidden md:block" style={{backgroundImage: 'url(/hero.jpg)'}}></div>
+            <div className="w-full md:w-1/2 bg-cover bg-center" style={{backgroundImage: 'url(/hero.jpg)'}}>
+                <div className="flex items-center justify-center h-full">
                     <div className="card glass">
-                        <div className="card-body">
-                            <form onSubmit={handleSearch}>
-                                <div className="flex flex-row"> 
-                                    <div> 
-                                        <RangeInput 
-                                            title="მინიმალური ფართი" 
-                                            min={40} 
-                                            max={100} 
-                                            color={"green-900"} 
-                                            unit={'კვ.მ'} 
-                                            setMinArea={setMinArea}
-                                        />
-                                        <RangeInput 
-                                            title="მაქსიმალური ფართი" 
-                                            min={70} 
-                                            max={150} 
-                                            color={"green-900"} 
-                                            unit={'კვ.მ'} 
-                                            setMaxArea={setMaxArea}
-                                        />
-                                    </div>
-                                </div>
-
-                                <div> 
-                                    <h1 className="text-md">საძინებლების რაოდენობა</h1>
-                                    <div>
-                                    
-                                    <div className="form-control mx-10">
-                                    {[1, 2, 3].map((value, index) => (
-                                        <label key={index} className="label cursor-pointer">
-                                        <span className="text-2xl">{value}</span>
-                                        <input
-                                            type="checkbox"
-                                            className="checkbox"
-                                            checked={index === checkedIndex}
-                                            onChange={() => handleCheckboxChange(index)}
-                                        />
-                                        </label>
-                                    ))}
-                                    </div>
-                                    </div>
-                                </div>
-                                <button className="btn btn-outline text-2xl">ბინის ძებნა</button>
-                            </form>
-                            <dialog id="my_modal_4" className="modal" data-theme="dark">
-                                <form method="dialog " className="modal-box modal-box w-11/12 max-w-5xl">
-                                <div className="block md:flex md:justify-center">
-                                    <table className="border-separate border-spacing-y-3">
-                                        <thead>
-                                            <tr>
-                                                <th className="py-2 px-4">პროექტი</th>
-                                                <th className="py-2 px-4">სართული</th>
-                                                <th className="py-2 px-4">ბინა</th>
-                                                <th className="py-2 px-4">კვ.მ.</th>
-                                                <th className="py-2 px-4"></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            {searchData && searchData.map((apartment) => (
-                                                
-                                                <tr
-                                                    key={apartment._id} 
-                                                    className="text-center cursor-pointer"
-                                                    onClick={() => router.push(`/project/${apartment.block_id}/${apartment.floor_id}/${apartment._id}`)}
-                                                    data-theme="garden"
-                                                >
-                                                    <td className="px-4">{apartment.project_name}</td>
-                                                    <td className="px-4">{apartment.floor_id}</td>
-                                                    <td className="px-4">{apartment.apartment_number}</td>
-                                                    <td className="px-4">{apartment.apartment_area}</td>
-                                                    <td className="px-4">
-                                                        <img
-                                                            src={apartment.apartment_render_image}
-                                                            alt={`Apartment ${apartment.apartment_number}`}
-                                                            className="object-cover"
-                                                            width={100}
-                                                        />
-                                                    </td>
-                                                </tr>
-                                            ))}
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-                                </form>
-                            </dialog>
-                        </div>
+                        <HeroSearch />
                     </div>
                 </div>
             </div>
