@@ -36,12 +36,13 @@ export default function HeroSearch() {
 
   return (
     <div className="card-body">
-                            <form onSubmit={handleSearch}>
-                                <div className="flex flex-row"> 
-                                    <div> 
-                                        <RangeInput 
-                                            title="მინიმალური ფართი" 
-                                            min={40} 
+        <form onSubmit={handleSearch}>
+            <div className="flex flex-row">
+                <div>
+                    <RangeInput
+                        title="მინიმალური ფართი"
+                        min={40}
+
                                             max={100} 
                                             color={"green-900"} 
                                             unit={'კვ.მ'} 

@@ -3,11 +3,11 @@ import HeroSearch from "./heroSearch"
 
 export default function Hero() {
     return (
-        <div className="flex min-h-screen">
-            <div className="w-1/2 bg-cover bg-center hidden md:block" style={{backgroundImage: 'url(/hero.jpg)'}}></div>
-            <div className="w-full md:w-1/2 bg-cover bg-center" style={{backgroundImage: 'url(/hero.jpg)'}}>
-                <div className="flex items-center justify-center h-full">
-                    <div className="card glass">
+        <div className="flex">
+            <div className="hero min-h-35vw" style={{backgroundImage: 'url(/0.jpg)'}}>
+            {/* <div className="hero-overlay bg-opacity-60"></div> */}
+            <div className="hero-content text-center text-neutral-content">
+                    <div className="card glass left-27vw">
                         <HeroSearch />
                     </div>
                 </div>
