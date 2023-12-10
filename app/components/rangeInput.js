@@ -34,7 +34,7 @@ export default function RangeInput({ title, min, max, color, unit, setMinPrice, 
                 max={max}
                 value={value}
                 onChange={handleRangeChange}
-                className="range bg-defaultOrange"
+                className="range"
             />
             <p className="text-lg">
                 <span className={`text-${color} font-bold`}>{title}:</span>{" "}

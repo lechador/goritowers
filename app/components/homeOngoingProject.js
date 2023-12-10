@@ -77,7 +77,7 @@ export default function HomeOngoingProject() {
             </div>
           </div>
           <div aria-hidden="true" className="mt-10 lg:mt-0">
-            <img src="/test-proj.webp" alt="" className="mx-auto rounded-lg shadow-lg" />
+            <img src="/002.webp" alt="" className="mx-auto rounded-lg shadow-lg" />
           </div>
         </div>
         <div>
