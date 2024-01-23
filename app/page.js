@@ -1,13 +1,11 @@
-import dynamic from "next/dynamic"
 import Faq from "./components/faq"
 import Hero from "./components/hero"
 import HomeOngoingProject from "./components/homeOngoingProject"
 import LoanCalc from "./components/loanCalc"
-import Partners from "./components/partners"
+import Header from "./components/header"
+import Footer from "./components/footer"
+import RequestCall from "./components/requestCall"
 
-const ReviewSlider = dynamic(() => import("./components/reviewSlider"), {
-  ssr: false
-})
 
 export const metadata = {
   title: 'გორითაუერსი',
@@ -16,10 +14,13 @@ export const metadata = {
 export default function Home(){
   return (
       <> 
+        <Header />
         <Hero />
         <HomeOngoingProject />
         <LoanCalc />
         <Faq />
+        <RequestCall showTitle={true} theme={'garden'} />
+        <Footer /> 
       </>
   )
 }

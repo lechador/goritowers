@@ -1,6 +1,3 @@
-import Footer from './components/footer'
-import Header from './components/header'
-import RequestCall from './components/requestCall'
 import { ToastContainer } from 'react-toastify';
 import localFont from 'next/font/local'
 import './globals.css'
@@ -22,12 +19,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ka" data-theme="light">
       <body className={ninoMtavruli.className}>
-        <Header />
         {children}
         <Nprogress />
-        <RequestCall showTitle={true} theme={'garden'} />
         <ToastContainer />
-        <Footer />
       </body>
     </html>
   )
