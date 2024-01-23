@@ -10,7 +10,7 @@ export default async function page({ params }) {
   const block = blockData.data.block
   const floors = blockData.data.floors
 
-  if(!block){
+  if(!block || !block.ongoing){
     notFound()
   }
 

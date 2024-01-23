@@ -6,6 +6,7 @@ import localFont from 'next/font/local'
 import './globals.css'
 import 'leaflet/dist/leaflet.css'
 import 'react-toastify/dist/ReactToastify.css';
+import Nprogress from './components/nprogress';
 
 const ninoMtavruli = localFont({
   src: './bpg_nino_mtavruli_normal.woff2',
@@ -23,6 +24,7 @@ export default function RootLayout({ children }) {
       <body className={ninoMtavruli.className}>
         <Header />
         {children}
+        <Nprogress />
         <RequestCall showTitle={true} theme={'garden'} />
         <ToastContainer />
         <Footer />

@@ -17,6 +17,7 @@
     "leaflet": "^1.9.4",
     "mongoose": "^7.4.4",
     "next": "13.4.16",
+    "next-nprogress-bar": "^2.1.2",
     "nextjs-progressbar": "^0.0.16",
     "nodemailer": "^6.9.7",
     "nprogress": "^0.2.0",
