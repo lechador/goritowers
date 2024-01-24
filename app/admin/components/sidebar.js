@@ -1,9 +1,24 @@
+import Link from 'next/link';
 
-
-export default function AdminSidebar() {
+const AdminSidebar = () => {
   return (
     <div className="w-full md:w-64 bg-gray-800 text-white p-4">
-        Sidebar
+      <nav>
+        <ul>
+          <li>
+            <Link className="hover:bg-gray-700 px-3 py-2 block" href="/admin/">
+              მთავარი
+            </Link>
+          </li>
+          <li>
+            <Link className="hover:bg-gray-700 px-3 py-2 block" href="/admin/apartments">
+              ბინები
+            </Link>
+          </li>
+        </ul>
+      </nav>
     </div>
-  )
-}
+  );
+};
+
+export default AdminSidebar;
