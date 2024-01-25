@@ -5,13 +5,9 @@ import { NextResponse } from "next/server";
 
 
 export async function GET(request){
-    const session = await getServerSession()
-    if(session){
-        dbConnect()
-        const apartments = await Apartment.find().sort({ apartment_number: 1 });
-        return NextResponse.json({apartments})
-    } 
-    return NextResponse.json({message: "not authorized"})
+    dbConnect()
+    const apartments = await Apartment.find().sort({ apartment_number: 1 });
+    return NextResponse.json({apartments})
 }
 
 
