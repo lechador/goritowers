@@ -5,9 +5,13 @@ import { NextResponse } from "next/server";
 
 
 export async function GET(request){
-    dbConnect()
-    const apartments = await Apartment.find().sort({ apartment_number: 1 });
-    return NextResponse.json({apartments})
+    try {
+        await dbConnect()
+        const apartments = await Apartment.find().sort({ apartment_number: 1 });
+        return NextResponse.json({apartments})
+    } catch (error) {
+        return NextResponse.json({error})
+    }
 }
 
 
