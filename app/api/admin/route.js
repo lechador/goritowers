@@ -4,21 +4,17 @@ import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
 
 
-export async function GET(request){
-    try {
+export async function GET(){
         await dbConnect()
         const apartments = await Apartment.find().sort({ apartment_number: 1 });
         return NextResponse.json({apartments})
-    } catch (error) {
-        return NextResponse.json({error})
-    }
 }
 
 
 export async function PUT(request){ 
     const session = await getServerSession()
     if(session){ 
-        dbConnect()
+        await dbConnect()
         const {aptId, state} = await request.json()
         const doc = await Apartment.findById(aptId);
         doc.is_sold = state ? false : true;
