@@ -50,7 +50,7 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="py-6 text-sm text-center dark:text-gray-400">© 2023 AG Development. ყველა უფლება დაცულია.</div>
+      <div className="py-6 text-sm text-center dark:text-gray-400">© 2024 AG Development. ყველა უფლება დაცულია.</div>
     </footer>
   )
 }
