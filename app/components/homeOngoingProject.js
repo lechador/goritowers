@@ -6,34 +6,34 @@ export default function HomeOngoingProject() {
     {
       description: "მიწისქვეშა კეთილმოწყობილი და დაცული საპარკინგე ადგილი დაგიზოგავთ დროს და ენერგიას, რომელიც ავტომობილის გაჩერებაში უნდა დაგეხარჯათ.",
       title: "პარკინგი-აქ ყოველთვის არის შენი ადგილი!",
-      image: "/002.webp"
+      image: "/images/15_result.webp"
     }, 
     {
       description: "სავაჭრო და საოფისე სივრცეები გამოვყავით იმისთვის, რომ ტერიტორიიდან გაუსვლელად შეიძინოთ ოჯახისთვის საჭირო სურსათი და  ყოველდღიური საჭიროების ნივთები.",
       title: "კომერციული სივრცეები-ადგილზე გაქვს ყველაფერი!",
-      image: "/002.webp"
+      image: "/images/26_result.webp"
     }, 
     {
       description: "გორი თაუერსი აღჭურვილია თანამედროვე უსაფრთხოების სისტემებით, სამეთვალყურეო კამერებით. ტერიტორიას 24 საათის განმავლობაში ემსახურება  დაცვა.",
       title: "უსაფრთხოება ოჯახის სიმშვიდისთვის!",
-      image: "/002.webp"
+      image: "/images/17_result.webp"
     }, 
     {
       description: "კონსირჟის მომსახურებასთან ერთად კეთილმოწყობილი, თანამედროვე, მყუდრო და ლამაზი ლობი საუკეთესო ადგილია საქმიანი შეხვედრების მოსაწყობად, სტუმრების მისაღებად და მაცხოვრებლების შეკრებისთვის.",
       title: "ლობი- ადგილი შენი შეხვედრებისთვის!",
-      image: "/002.webp"
+      image: "/images/23_result.webp"
     }, 
     {
       description: "დღის ბოლოს, შვილებთან ერთად სეირნობა და თამაში საუკეთესო განტვირთვაა. გეკუთვნის 3500 კვადრატული გამწვანებული და დაცული შიდა ეზო, სუფთა ჰაერზე თავშეყრის ადგილებით, მოსასვენებელი სივრცეებით და საბავშვო გასართობი მოედნებით.",
       title: "ეზო-სიმწვანეში ცხოვრებისთვის!",
-      image: "/002.webp"
+      image: "/images/14_result.webp"
     }
   ]
 
   return (
     <section data-theme="dark" className="cursor-pointer">
       <Link href="/project">
-      <div className="container max-w-xl p-6 py-12 mx-auto space-y-24 lg:px-8 lg:max-w-7xl">
+      <div className="container max-w-xl p-6 py-12 mx-auto md:space-y-12 lg:px-8 lg:max-w-7xl">
           <div>
             <h2 className="text-3xl font-bold tracki text-center sm:text-5xl">მიმდინარე პროექტი</h2>
             <p className="max-w-5xl mx-auto mt-4 text-xl text-center">
@@ -60,7 +60,7 @@ export default function HomeOngoingProject() {
                                 </div>
                               </div>
                               <div className="ml-4 flex items-center">
-                                <h4 className="text-2xl font-medium leadi">{item.title}</h4>
+                                <h4 className="text-2xl font-medium text-defaultOrange">{item.title}</h4>
                               </div>
                             </div>
                     </div>

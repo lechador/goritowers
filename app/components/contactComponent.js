@@ -11,15 +11,15 @@ export default function ContactComponent() {
         <div className="card-body">
             <div className="flex gap-4 items-center my-2">
                 <BsFillTelephoneForwardFill size={30} />
-                <span className="font-bold text-xl">(032) 2 444 111</span>
+                <span className="font-bold text-xl">"ნომერი"</span>
             </div>
             <div className="flex gap-4 items-center my-2">
                 <MdEmail size={30} />
-                <span className="font-bold text-xl">info@m2.ge</span>
+                <span className="font-bold text-xl">info@goritowers.ge</span>
             </div>
             <div className="flex gap-4 items-center my-2">
                 <FaLocationDot size={30} />
-                <span className="font-bold text-xl">გ. კარტოზიას ქ. №10, თბილისი</span>
+                <span className="font-bold text-xl">"მისამართი"</span>
             </div>
             <div className="card-actions justify-end">
             </div>

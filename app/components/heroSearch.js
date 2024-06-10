@@ -44,7 +44,7 @@ export default function HeroSearch() {
                         min={40}
 
                                             max={100} 
-                                            color={"green-900"} 
+                                            color={"white"} 
                                             unit={'კვ.მ'} 
                                             setMinArea={setMinArea}
                                         />
@@ -52,7 +52,7 @@ export default function HeroSearch() {
                                             title="მაქსიმალური ფართი" 
                                             min={70} 
                                             max={150} 
-                                            color={"green-900"} 
+                                            color={"white"} 
                                             unit={'კვ.მ'} 
                                             setMaxArea={setMaxArea}
                                         />
@@ -60,13 +60,13 @@ export default function HeroSearch() {
                                 </div>
 
                                 <div> 
-                                    <h1 className="text-md">საძინებლების რაოდენობა</h1>
+                                    <h1 className="text-md text-white">საძინებლების რაოდენობა</h1>
                                     <div>
                                     
                                     <div className="form-control mx-10">
                                     {[1, 2, 3].map((value, index) => (
                                         <label key={index} className="label cursor-pointer">
-                                        <span className="text-2xl">{value}</span>
+                                        <span className="text-2xl text-white">{value}</span>
                                         <input
                                             type="checkbox"
                                             className="checkbox"
