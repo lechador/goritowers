@@ -1,7 +1,10 @@
 'use client'
-import { register } from 'swiper/element';
+import { register } from 'swiper/element/bundle';
 import ComponentTitle from './componentTitle';
+import 'swiper/swiper-bundle.css';
 register();
+
+
 
 export default function ImageGallery({theme}) {
     const images = [
@@ -24,6 +27,8 @@ export default function ImageGallery({theme}) {
             <ComponentTitle title="გალერეა" />
             <swiper-container
                     slides-per-view="2"
+                    navigation="true" scrollbar="true"
+                    
                 >   
                     {images.map((image, index) => (
                         <swiper-slide key={index}>

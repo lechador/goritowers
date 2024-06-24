@@ -69,7 +69,7 @@ export default function HeroSearch() {
                                         <span className="text-2xl text-white">{value}</span>
                                         <input
                                             type="checkbox"
-                                            className="checkbox"
+                                            className="checkbox border-opacity-100"
                                             checked={index === checkedIndex}
                                             onChange={() => handleCheckboxChange(index)}
                                         />
