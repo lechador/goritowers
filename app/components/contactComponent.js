@@ -15,7 +15,7 @@ export default function ContactComponent() {
             </div>
             <div className="flex gap-4 items-center my-2">
                 <MdEmail size={30} />
-                <span className="font-bold text-xl">info@goritowers.ge</span>
+                <span className="font-bold text-xl">welcome@goritowers.ge</span>
             </div>
             <div className="flex gap-4 items-center my-2">
                 <FaLocationDot size={30} />

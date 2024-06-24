@@ -20,7 +20,7 @@ export default function ImageGallery({theme}) {
         '/gallery/24_result.webp',
         '/gallery/25_result.webp',
         '/gallery/28_result.webp',
-        '/gallery/30_result.webp',
+        '/gallery/30_result.webp'
     ]
     return (
         <div className='pt-6 pb-10 px-4 ' data-theme={theme}> 
