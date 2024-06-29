@@ -18,7 +18,7 @@ export default function Home(){
         <Hero />
         <HomeOngoingProject />
         <LoanCalc />
-        <Faq />
+        {/* <Faq /> */}
         <RequestCall showTitle={true} theme={'garden'} />
         <Footer /> 
       </>

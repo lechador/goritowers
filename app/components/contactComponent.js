@@ -19,7 +19,7 @@ export default function ContactComponent() {
             </div>
             <div className="flex gap-4 items-center my-2">
                 <FaLocationDot size={30} />
-                <span className="font-bold text-xl">მისამართი</span>
+                <span className="font-bold text-xl">თამარ მეფის გამზირი N81, გორი, საქართველო</span>
             </div>
             <div className="card-actions justify-end">
             </div>
