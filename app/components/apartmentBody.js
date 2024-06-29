@@ -38,7 +38,7 @@ export default function ApartmentBody({ apartment_area, living_area, balcony_are
         </div>
         <label className="modal-backdrop" htmlFor="my_modal_7">Close</label>
       </div>
-        <div className="w-full md:w-4/6">
+        <div className="w-full md:w-1/2">
           <div className="card w-full shadow-xl my-4" data-theme="dark">
             <div className="card-body">
               <div className="flex flex-row justify-evenly">
@@ -93,7 +93,7 @@ export default function ApartmentBody({ apartment_area, living_area, balcony_are
             </div>
           </div>
         </div>
-        <div className="w-full md:w-2/6">
+        <div className="w-full md:w-1/2">
           <label htmlFor="my_modal_7" className="btn">
             <img src={apartment_render_image} alt="image" />
           </label>
