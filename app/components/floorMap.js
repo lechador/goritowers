@@ -8,8 +8,8 @@ const FabricFloorMap = ({block}) => {
   const router = useRouter()
   const hoverColor = 'rgba(255, 88, 1, 0.6)';
   useEffect(() => {
-    let canvasWidth = 600;
-    let canvasHeight = 676;
+    let canvasWidth = 1382;
+    let canvasHeight = 1037;
     if(window.innerWidth<640){
       canvasWidth = 300;
       canvasHeight = 338;
@@ -19,10 +19,10 @@ const FabricFloorMap = ({block}) => {
     const polygons = [
       {
         points: [
-            { x: 45, y: 545 },
-            { x: 41, y: 571 },
-            { x: 554, y: 573 },
-            { x: 553, y: 546 },
+            { x: 341, y: 796 },
+            { x: 340, y: 828 },
+            { x: 1044, y: 829 },
+            { x: 1044, y: 796 },
         ],
         fill: hoverColor,
         selectable: false,
@@ -30,10 +30,10 @@ const FabricFloorMap = ({block}) => {
       },
       {
         points: [
-            { x: 49, y: 504 },
-            { x: 47, y: 540 },
-            { x: 555, y: 540 },
-            { x: 552, y: 504 },
+          { x: 343, y: 742 },
+          { x: 343, y: 785 },
+          { x: 1043, y: 784 },
+          { x: 1043, y: 743 },          
         ],
         fill: hoverColor,
         selectable: false,
@@ -41,10 +41,10 @@ const FabricFloorMap = ({block}) => {
       },
       {
         points: [
-            { x: 55, y: 459 },
-            { x: 54, y: 493 },
-            { x: 550, y: 497 },
-            { x: 547, y: 462 },
+            { x: 350, y: 691 },
+            { x: 350, y: 718 },
+            { x: 1043, y: 721 },
+            { x: 1043, y: 686 },
         ],
         fill: hoverColor,
         selectable: false,
@@ -52,10 +52,10 @@ const FabricFloorMap = ({block}) => {
       },
       {
         points: [
-            { x: 57, y: 418 },
-            { x: 55, y: 454 },
-            { x: 546, y: 457 },
-            { x: 544, y: 423 },
+          { x: 351, y: 635 },
+          { x: 351, y: 678 },
+          { x: 1044, y: 679 },
+          { x: 1041, y: 630 },          
         ],
         fill: hoverColor,
         selectable: false,
@@ -63,10 +63,10 @@ const FabricFloorMap = ({block}) => {
       },
       {
         points: [
-            { x: 59, y: 379 },
-            { x: 58, y: 413 },
-            { x: 544, y: 414 },
-            { x: 541, y: 381 },
+          { x: 351, y: 576 },
+          { x: 350, y: 625 },
+          { x: 1046, y: 621 },
+          { x: 1043, y: 576 },          
         ],
         fill: hoverColor,
         selectable: false,
@@ -74,10 +74,10 @@ const FabricFloorMap = ({block}) => {
       },
       {
         points: [
-            { x: 61, y: 339 },
-            { x: 60, y: 371 },
-            { x: 542, y: 374 },
-            { x: 540, y: 343 },
+          { x: 350, y: 523 },
+          { x: 350, y: 571 },
+          { x: 1045, y: 568 },
+          { x: 1041, y: 525 },          
         ],
         fill: hoverColor,
         selectable: false,
@@ -85,10 +85,10 @@ const FabricFloorMap = ({block}) => {
       },
       {
         points: [
-            { x: 64, y: 297 },
-            { x: 62, y: 333 },
-            { x: 541, y: 336 },
-            { x: 538, y: 305 },
+          { x: 351, y: 468 },
+          { x: 349, y: 514 },
+          { x: 1045, y: 516 },
+          { x: 1043, y: 469 },          
         ],
         fill: hoverColor,
         selectable: false,
@@ -96,10 +96,10 @@ const FabricFloorMap = ({block}) => {
       },
       {
         points: [
-            { x: 66, y: 260 },
-            { x: 65, y: 295 },
-            { x: 540, y: 296 },
-            { x: 538, y: 264 },
+          { x: 351, y: 412 },
+          { x: 347, y: 458 },
+          { x: 1044, y: 462 },
+          { x: 1044, y: 415 },          
         ],
         fill: hoverColor,
         selectable: false,
@@ -107,10 +107,10 @@ const FabricFloorMap = ({block}) => {
       },
       {
         points: [
-            { x: 68, y: 222 },
-            { x: 67, y: 254 },
-            { x: 536, y: 260 },
-            { x: 533, y: 228 },
+          { x: 350, y: 359 },
+          { x: 350, y: 402 },
+          { x: 1044, y: 400 },
+          { x: 1045, y: 359 },          
         ],
         fill: hoverColor,
         selectable: false,
@@ -118,10 +118,10 @@ const FabricFloorMap = ({block}) => {
       },
       {
         points: [
-            { x: 72, y: 186 },
-            { x: 73, y: 220 },
-            { x: 533, y: 221 },
-            { x: 531, y: 193 },
+          { x: 351, y: 302 },
+          { x: 351, y: 350 },
+          { x: 1044, y: 349 },
+          { x: 1043, y: 305 },          
         ],
         fill: hoverColor,
         selectable: false,
@@ -129,10 +129,10 @@ const FabricFloorMap = ({block}) => {
       },
       {
         points: [
-            { x: 73, y: 149 },
-            { x: 72, y: 180 },
-            { x: 532, y: 184 },
-            { x: 531, y: 154 },
+          { x: 351, y: 249 },
+          { x: 351, y: 295 },
+          { x: 1044, y: 295 },
+          { x: 1044, y: 250 },          
         ],
         fill: hoverColor,
         selectable: false,
@@ -140,10 +140,10 @@ const FabricFloorMap = ({block}) => {
       },
       {
         points: [
-            { x: 75, y: 114 },
-            { x: 72, y: 145 },
-            { x: 529, y: 148 },
-            { x: 529, y: 119 },
+          { x: 350, y: 191 },
+          { x: 350, y: 239 },
+          { x: 1045, y: 239 },
+          { x: 1044, y: 195 },          
         ],
         fill: hoverColor,
         selectable: false,
@@ -151,10 +151,10 @@ const FabricFloorMap = ({block}) => {
       },
       {
         points: [
-            { x: 77, y: 78 },
-            { x: 75, y: 107 },
-            { x: 529, y: 113 },
-            { x: 525, y: 84 },
+          { x: 350, y: 137 },
+          { x: 350, y: 185 },
+          { x: 1045, y: 183 },
+          { x: 1045, y: 136 },          
         ],
         fill: hoverColor,
         selectable: false,
@@ -162,10 +162,10 @@ const FabricFloorMap = ({block}) => {
       },
       {
         points: [
-            { x: 80, y: 45 },
-            { x: 78, y: 74 },
-            { x: 525, y: 79 },
-            { x: 525, y: 49 },
+          { x: 351, y: 82 },
+          { x: 350, y: 127 },
+          { x: 1044, y: 129 },
+          { x: 1045, y: 85 },          
         ],
         fill: hoverColor,
         selectable: false,
@@ -205,7 +205,7 @@ const FabricFloorMap = ({block}) => {
     <div className="relative flex justify-center mb-32">
       <div className="relative">
         <div className="absolute">
-          <img src="/a-bloki.webp" alt="Floor Map" className="w-80 sm:w-[600px]" />
+          <img src="/images/3_result.webp" alt="Floor Map" className="w-80 sm:w-[1382px]" />
         </div>
         <canvas id="floor-map-canvas" className="absolute top-0 left-0 hidden sm:block"></canvas>
       </div>
