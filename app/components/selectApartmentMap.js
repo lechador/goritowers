@@ -13,7 +13,7 @@ const FabricApartmentMap = ({params, apartments, floor}) => {
   const router = useRouter()
   useEffect(() => {
     if(size.width){ 
-    let canvasWidth = size.width>1024 ? 1000 : 320;
+    let canvasWidth = size.width>1024 ? 1200 : 1125;
     let canvasHeight = size.width>1024 ? 563 : 326;
     let selectedFloor;
     if(size.width<1000){
@@ -69,12 +69,12 @@ const FabricApartmentMap = ({params, apartments, floor}) => {
   }, [size.width]);
 
   return (
-    <div className="relative flex justify-center mb-32">
+    <div className="relative flex justify-center md:mb-[550px]">
       <div className="relative">
         <div className="absolute">
             {
               size.width > 1000 ? (
-                <img src={`/floors/${floor.floor_image}`} alt="Floor Map" width='1000' height='563' />
+                <img src={`/floors/${floor.floor_image}`} alt="Floor Map" width='1200' height='1125' />
               ) : (
                 <img src={`/floors/mobile/${floor.floor_image_mobile}`} alt="Floor Map" width='320' height='326' />
               )
