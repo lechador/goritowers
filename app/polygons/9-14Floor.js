@@ -1,131 +1,15 @@
 const hoverColor = 'rgba(255, 88, 1, 0.6)';
 export const Nineth14Floor = [
-  {
-    points: [
-        { x: 239, y: 288 },
-        { x: 349, y: 290 },
-        { x: 348, y: 392 },
-        { x: 330, y: 391 },
-        { x: 329, y: 362 },
-        { x: 260, y: 362 },
-        { x: 260, y: 369 },
-        { x: 240, y: 370 },
-    ],
-    fill: hoverColor,
-    selectable: false,
-    opacity: 0
-  },
-  {
-    points: [
-      { x: 239, y: 372 },
-      { x: 263, y: 372 },
-      { x: 262, y: 363 },
-      { x: 329, y: 364 },
-      { x: 329, y: 420 },
-      { x: 347, y: 420 },
-      { x: 345, y: 536 },
-      { x: 258, y: 537 },
-      { x: 257, y: 451 },
-      { x: 233, y: 452 },
-      { x: 230, y: 440 },
-      { x: 242, y: 441 }
-    ],
-    fill: hoverColor,
-    selectable: false,
-    opacity: 0
-  },
-  {
-    points: [
-        { x: 352, y: 276 },
-        { x: 352, y: 390 },
-        { x: 433, y: 390 },
-        { x: 433, y: 275 },
-    ],
-    fill: hoverColor,
-    selectable: false,
-    opacity: 0
-  },
-  {
-    points: [
-      { x: 351, y: 419 },
-      { x: 435, y: 418 },
-      { x: 433, y: 535 },
-      { x: 383, y: 538 },
-      { x: 347, y: 544 },
-      { x: 349, y: 519 }
-    ],
-    fill: hoverColor,
-    selectable: false,
-    opacity: 0
-  },
-  {
-    points: [
-        { x: 439, y: 291 },
-        { x: 521, y: 290 },
-        { x: 520, y: 391 },
-        { x: 438, y: 391 },
-    ],
-    fill: hoverColor,
-    selectable: false,
-    opacity: 0
-  },
-  {
-    points: [
-        { x: 437, y: 417 },
-        { x: 521, y: 419 },
-        { x: 524, y: 534 },
-        { x: 437, y: 534 },
-    ],
-    fill: hoverColor,
-    selectable: false,
-    opacity: 0
-  },
-  {
-    points: [
-        { x: 525, y: 418 },
-        { x: 609, y: 419 },
-        { x: 609, y: 534 },
-        { x: 524, y: 535 },
-    ],
-    fill: hoverColor,
-    selectable: false,
-    opacity: 0
-  },
-  {
-    points: [
-      { x: 613, y: 418 },
-      { x: 657, y: 417 },
-      { x: 661, y: 367 },
-      { x: 759, y: 367 },
-      { x: 761, y: 438 },
-      { x: 778, y: 438 },
-      { x: 777, y: 536 },
-      { x: 687, y: 535 },
-      { x: 684, y: 542 },
-      { x: 653, y: 538 },
-      { x: 612, y: 536 }
-    ],
-    fill: hoverColor,
-    selectable: false,
-    opacity: 0
-  },
-  {
-    points: [
-      { x: 659, y: 281 },
-      { x: 762, y: 280 },
-      { x: 762, y: 364 },
-      { x: 659, y: 363 }
-    ],
-    fill: hoverColor,
-    selectable: false,
-    opacity: 0
-  },
     {
       points: [
-          { x: 659, y: 194 },
-          { x: 779, y: 194 },
-          { x: 778, y: 280 },
-          { x: 661, y: 278 }
+        { x: 81, y: 581 },
+        { x: 298, y: 580 },
+        { x: 296, y: 780 },
+        { x: 264, y: 780 },
+        { x: 267, y: 722 },
+        { x: 115, y: 721 },
+        { x: 114, y: 738 },
+        { x: 87, y: 738 },        
       ],
       fill: hoverColor,
       selectable: false,
@@ -133,10 +17,16 @@ export const Nineth14Floor = [
     },
     {
       points: [
-          { x: 533, y: 172 },
-          { x: 635, y: 174 },
-          { x: 634, y: 280 },
-          { x: 533, y: 278 }
+        { x: 83, y: 744 },
+        { x: 126, y: 745 },
+        { x: 127, y: 729 },
+        { x: 256, y: 731 },
+        { x: 255, y: 835 },
+        { x: 295, y: 839 },
+        { x: 293, y: 1065 },
+        { x: 118, y: 1067 },
+        { x: 121, y: 900 },
+        { x: 85, y: 901 },
       ],
       fill: hoverColor,
       selectable: false,
@@ -144,10 +34,10 @@ export const Nineth14Floor = [
     },
     {
       points: [
-        { x: 659, y: 107 },
-        { x: 777, y: 107 },
-        { x: 777, y: 190 },
-        { x: 661, y: 191 }
+        { x: 298, y: 552 },
+        { x: 307, y: 783 },
+        { x: 470, y: 786 },
+        { x: 469, y: 552 },        
       ],
       fill: hoverColor,
       selectable: false,
@@ -155,16 +45,10 @@ export const Nineth14Floor = [
     },
     {
       points: [
-          { x: 518, y: 18 },
-          { x: 604, y: 18 },
-          { x: 604, y: 63 },
-          { x: 634, y: 63 },
-          { x: 633, y: 98 },
-          { x: 606, y: 98 },
-          { x: 606, y: 109 },
-          { x: 533, y: 110 },
-          { x: 532, y: 62 },
-          { x: 519, y: 63 }
+        { x: 305, y: 835 },
+        { x: 302, y: 1072 },
+        { x: 470, y: 1071 },
+        { x: 470, y: 835 },
       ],
       fill: hoverColor,
       selectable: false,
@@ -172,16 +56,125 @@ export const Nineth14Floor = [
     },
     {
       points: [
-          { x: 604, y: 18 },
-          { x: 605, y: 60 },
-          { x: 635, y: 61 },
-          { x: 635, y: 79 },
-          { x: 660, y: 79 },
-          { x: 659, y: 105 },
-          { x: 762, y: 103 },
-          { x: 762, y: 3 },
-          { x: 707, y: 2 },
-          { x: 706, y: 18 }
+        { x: 476, y: 581 },
+        { x: 476, y: 785 },
+        { x: 642, y: 785 },
+        { x: 641, y: 581 },        
+      ],
+      fill: hoverColor,
+      selectable: false,
+      opacity: 0
+    },
+    {
+      points: [
+        { x: 477, y: 842 },
+        { x: 477, y: 1069 },
+        { x: 645, y: 1070 },
+        { x: 642, y: 842 },        
+      ],
+      fill: hoverColor,
+      selectable: false,
+      opacity: 0
+    },
+    {
+      points: [
+        { x: 652, y: 840 },
+        { x: 652, y: 1067 },
+        { x: 820, y: 1068 },
+        { x: 817, y: 840 },        
+      ],
+      fill: hoverColor,
+      selectable: false,
+      opacity: 0
+    },
+    {
+      points: [
+        { x: 826, y: 835 },
+        { x: 825, y: 1068 },
+        { x: 1158, y: 1070 },
+        { x: 1156, y: 877 },
+        { x: 1126, y: 878 },
+        { x: 1119, y: 737 },
+        { x: 923, y: 732 },
+        { x: 923, y: 834 },
+      ],
+      fill: hoverColor,
+      selectable: false,
+      opacity: 0
+    },
+    {
+      points: [
+        { x: 917, y: 564 },
+        { x: 1125, y: 567 },
+        { x: 1122, y: 721 },
+        { x: 922, y: 725 },
+      ],
+      fill: hoverColor,
+      selectable: false,
+      opacity: 0
+    },
+    {
+      points: [
+        { x: 916, y: 391 },
+        { x: 1124, y: 394 },
+        { x: 1125, y: 558 },
+        { x: 919, y: 558 },        
+      ],
+      fill: hoverColor,
+      selectable: false,
+      opacity: 0
+    },
+    {
+      points: [
+        { x: 665, y: 346 },
+        { x: 873, y: 349 },
+        { x: 868, y: 559 },
+        { x: 665, y: 559 },        
+      ],
+      fill: hoverColor,
+      selectable: false,
+      opacity: 0
+    },
+    {
+      points: [
+        { x: 919, y: 217 },
+        { x: 1125, y: 218 },
+        { x: 1126, y: 384 },
+        { x: 920, y: 387 },        
+      ],
+      fill: hoverColor,
+      selectable: false,
+      opacity: 0
+    },
+    {
+      points: [
+        { x: 635, y: 36 },
+        { x: 635, y: 121 },
+        { x: 665, y: 125 },
+        { x: 666, y: 205 },
+        { x: 810, y: 207 },
+        { x: 811, y: 196 },
+        { x: 867, y: 190 },
+        { x: 868, y: 125 },
+        { x: 810, y: 125 },
+        { x: 807, y: 38 },        
+      ],
+      fill: hoverColor,
+      selectable: false,
+      opacity: 0
+    },
+    {
+      points: [
+        { x: 812, y: 35 },
+        { x: 812, y: 119 },
+        { x: 877, y: 121 },
+        { x: 877, y: 154 },
+        { x: 923, y: 154 },
+        { x: 923, y: 206 },
+        { x: 1119, y: 208 },
+        { x: 1119, y: 9 },
+        { x: 1015, y: 8 },
+        { x: 1014, y: 35 },        
       ],
       fill: hoverColor,
       selectable: false,
