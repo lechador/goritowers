@@ -4,7 +4,7 @@ import RequestCall from "../components/requestCall"
 
 export default function Layout({children}) {
   return (
-    <>
+    <>  
         <Header />
         {children}
         <RequestCall showTitle={true} theme={'garden'} />

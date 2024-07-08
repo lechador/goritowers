@@ -16,7 +16,7 @@ export async function POST(request) {
     await transporter.sendMail({
       from: `გორითაუერსი <egivi@aol.com>`,
       to: [
-        'endeladzegivi@gmail.com'
+        'welcome@goritowers.ge'
         ],
       subject: 'ზარის შეკვეთა',
       text: `
