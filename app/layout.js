@@ -23,8 +23,8 @@ export default function RootLayout({ children }) {
         {children}
         <Nprogress />
         <ToastContainer />
+        <Fbchat />
       </body>
-      <Fbchat />
     </html>
   )
 }
