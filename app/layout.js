@@ -20,11 +20,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="ka" data-theme="light">
       <body className={ninoMtavruli.className}>
-        <Fbchat />
         {children}
         <Nprogress />
         <ToastContainer />
       </body>
+      <Fbchat />
     </html>
   )
 }
