@@ -14,6 +14,9 @@ const ninoMtavruli = localFont({
 export const metadata = {
   title: 'გორი თაუერსი',
   description: 'გორი თაუერსი - AG Development',
+  other: {
+    'facebook-domain-verification': 'r51xzddhk797n9us9pxpfvwg6dczu1',
+  },
 }
 
 export default function RootLayout({ children }) {
