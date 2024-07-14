@@ -6,7 +6,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import Nprogress from './components/nprogress';
 import TawkChat from './components/tawk';
 import Script from 'next/script';
-import Head from 'next/head';
 
 const ninoMtavruli = localFont({
   src: './bpg_nino_mtavruli_normal.woff2',

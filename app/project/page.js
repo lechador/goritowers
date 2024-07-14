@@ -1,5 +1,4 @@
 import LocationComponent from "../components/locationComponent";
-import PaymentDetails from "../components/paymentDetails";
 import TextComponent from "../components/textComponent";
 import dynamic from "next/dynamic";
 
@@ -36,7 +35,6 @@ export default function page() {
     <ChooseBlock />
     <LocationComponent />
     <ImageGallery theme='garden' />
-    <PaymentDetails />
     </>
   )
 }

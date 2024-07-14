@@ -14,7 +14,7 @@ export default function page() {
   return (
     <div>
       <ContactComponent />
-      <LeafletMap position={[41.976, 44.114]} containerHeight='h-screen' />
+      <LeafletMap position={[41.97550113493826, 44.122536530809825]} containerHeight='h-screen' />
     </div>
   )
 }

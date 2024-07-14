@@ -7,7 +7,7 @@ export default function LeafletMap({position, containerHeight}) {
     const [geoData, setGeoData] = useState(position);
     const customIcon = L.icon({
         iconUrl: '/marker.png',
-        iconSize: [39, 52]
+        iconSize: [25, 32]
       });
     return (
         <MapContainer center={geoData} zoom={15} scrollWheelZoom={false} className={`w-full ${containerHeight}`}>
@@ -17,11 +17,7 @@ export default function LeafletMap({position, containerHeight}) {
             />
             {
                 geoData && (
-                    <Marker position={geoData} icon={customIcon}>
-                        <Popup>
-                            ტექსტი
-                        </Popup>
-                    </Marker>
+                    <Marker position={geoData} icon={customIcon} />
                 )
             }
         </MapContainer>
