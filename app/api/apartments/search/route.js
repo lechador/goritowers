@@ -37,7 +37,7 @@ export async function POST(request) {
     }
 
     try {
-        const apartments = await Apartment.find({ ...filters }).limit(10);
+        const apartments = await Apartment.find({ ...filters });
         return NextResponse.json({ apartments });
     } catch (error) {
         return NextResponse.json({ message: "error" });

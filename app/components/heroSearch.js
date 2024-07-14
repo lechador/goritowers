@@ -90,7 +90,7 @@ export default function HeroSearch() {
                                                 <th className="py-2 px-4">სართული</th>
                                                 <th className="py-2 px-4">ბინა</th>
                                                 <th className="py-2 px-4">კვ.მ.</th>
-                                                <th className="py-2 px-4"></th>
+                                                {/* <th className="py-2 px-4"></th> */}
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -106,14 +106,14 @@ export default function HeroSearch() {
                                                     <td className="px-4">{apartment.floor_id}</td>
                                                     <td className="px-4">{apartment.apartment_number}</td>
                                                     <td className="px-4">{apartment.apartment_area}</td>
-                                                    <td className="px-4">
+                                                    {/* <td className="px-4">
                                                         <img
                                                             src={apartment.apartment_render_image}
                                                             alt={`Apartment ${apartment.apartment_number}`}
                                                             className="object-cover"
                                                             width={100}
                                                         />
-                                                    </td>
+                                                    </td> */}
                                                 </tr>
                                             ))}
                                         </tbody>
