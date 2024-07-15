@@ -1,3 +1,4 @@
+import Image from "next/image"
 import Link from "next/link"
 
 export default function HomeOngoingProject() {
@@ -76,8 +77,13 @@ export default function HomeOngoingProject() {
                     <p className="mt-3 text-xl text-center">{item.description}</p>
                   </div>
                   <div className={index==1 || index ==3 ? "mt-10 lg:mt-0 lg:col-start-1 lg:row-start-1" : "mt-10 lg:mt-0"}>
-                    
-                    <img src={item.image} alt="" className="mx-auto rounded-lg shadow-lg" />
+                    <Image 
+                      src={item.image} 
+                      alt="" 
+                      className="mx-auto rounded-lg shadow-lg" 
+                      width={600}
+                      height={400}
+                     />
                   </div>
                 </div>
               </div>
