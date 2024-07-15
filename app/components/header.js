@@ -1,6 +1,7 @@
 import Link from "next/link";
 import CallModal from "./callModal";
 import Image from "next/image";
+import ScrollToTop from "./scrollToTop";
 
 export default function Header() {
   return (
@@ -17,9 +18,7 @@ export default function Header() {
         <li><Link href="/contact">კონტაქტი</Link></li>
       </ul>
     </div>
-    <Link href='/' className="btn btn-ghost normal-case text-xl">
-      <Image src='/logo.png' alt="logo" width={150} height={50} />
-    </Link>
+    <ScrollToTop />
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
