@@ -1,3 +1,4 @@
+'use client'
 
 export default function ApartmentBody({ apartment_area, living_area, balcony_area, apartment_render_image, living_room_and_kitchen_area, toilet_area, bedroom_area, second_bedroom_area, third_bedroom_area }) {
   return (
@@ -94,9 +95,13 @@ export default function ApartmentBody({ apartment_area, living_area, balcony_are
           </div>
         </div>
         <div className="w-full md:w-1/2">
-          <label htmlFor="my_modal_7" className="btn">
-            <img src={apartment_render_image} alt="image" />
-          </label>
+        <label htmlFor="my_modal_7" className="btn">
+          <img
+            src={apartment_render_image}
+            alt="image"
+            className=''
+          />
+        </label>
         </div>
       </div>
   )
