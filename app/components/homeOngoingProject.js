@@ -5,12 +5,14 @@ export default function HomeOngoingProject() {
   const data = [
     {
       description: "მიწისქვეშა კეთილმოწყობილი და დაცული საპარკინგე ადგილი დაგიზოგავთ დროს და ენერგიას, რომელიც ავტომობილის გაჩერებაში უნდა დაგეხარჯათ.",
-      title: "პარკინგი-აქ ყოველთვის არის შენი ადგილი!",
+      title: "პარკინგი",
+      title2: "აქ ყოველთვის არის შენი ადგილი!",
       image: "/parking.webp"
     }, 
     {
       description: "სავაჭრო და საოფისე სივრცეები გამოვყავით იმისთვის, რომ ტერიტორიიდან გაუსვლელად შეიძინოთ ოჯახისთვის საჭირო სურსათი და  ყოველდღიური საჭიროების ნივთები.",
-      title: "კომერციული სივრცეები-ადგილზე გაქვს ყველაფერი!",
+      title: "კომერციული სივრცეები",
+      title2: "ადგილზე გაქვს ყველაფერი!",
       image: "/images/26_result.webp"
     }, 
     {
@@ -20,12 +22,14 @@ export default function HomeOngoingProject() {
     }, 
     {
       description: "კონსიერჟის მომსახურებასთან ერთად კეთილმოწყობილი, თანამედროვე, მყუდრო და ლამაზი ლობი საუკეთესო ადგილია საქმიანი შეხვედრების მოსაწყობად, სტუმრების მისაღებად და მაცხოვრებლების შეკრებისთვის.",
-      title: "ლობი- ადგილი შენი შეხვედრებისთვის!",
+      title: "ლობი",
+      title2: "ადგილი შენი შეხვედრებისთვის!",
       image: "/images/23_result.webp"
     }, 
     {
       description: "დღის ბოლოს, შვილებთან ერთად სეირნობა და თამაში საუკეთესო განტვირთვაა. გეკუთვნის 3500 კვადრატული გამწვანებული და დაცული შიდა ეზო, სუფთა ჰაერზე თავშეყრის ადგილებით, მოსასვენებელი სივრცეებით და საბავშვო გასართობი მოედნებით.",
-      title: "ეზო-სიმწვანეში ცხოვრებისთვის!",
+      title: "ეზო",
+      title2: "სიმწვანეში ცხოვრებისთვის!",
       image: "/images/14_result.webp"
     }
   ]
@@ -59,14 +63,20 @@ export default function HomeOngoingProject() {
                                   </svg>
                                 </div>
                               </div>
-                              <div className="ml-4 flex items-center">
-                                <h4 className="text-2xl font-medium text-defaultOrange">{item.title}</h4>
+                              <div className="ml-4 flex items-center flex-col">
+                                <h4 className="text-3xl font-medium text-defaultOrange">{item.title}</h4>
+                                {
+                                  item.title2 && (
+                                    <h4 className="text-xl font-medium text-defaultOrange">{item.title2}</h4>
+                                  )
+                                }
                               </div>
                             </div>
                     </div>
                     <p className="mt-3 text-xl text-center">{item.description}</p>
                   </div>
                   <div className={index==1 || index ==3 ? "mt-10 lg:mt-0 lg:col-start-1 lg:row-start-1" : "mt-10 lg:mt-0"}>
+                    
                     <img src={item.image} alt="" className="mx-auto rounded-lg shadow-lg" />
                   </div>
                 </div>
