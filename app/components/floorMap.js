@@ -11,8 +11,8 @@ const FabricFloorMap = ({block}) => {
     let canvasWidth = 1382;
     let canvasHeight = 1037;
     if(window.innerWidth<640){
-      canvasWidth = 300;
-      canvasHeight = 338;
+      canvasWidth = 320;
+      canvasHeight = 300;
     }
 
     const canvas = new fabric.Canvas('floor-map-canvas', { width: canvasWidth, height: canvasHeight });
