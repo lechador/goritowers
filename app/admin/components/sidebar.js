@@ -15,6 +15,11 @@ const AdminSidebar = () => {
               ბინები
             </Link>
           </li>
+          <li>
+            <Link className="hover:bg-gray-700 px-3 py-2 block" href="/admin/settings">
+              პარამეტრები
+            </Link>
+          </li>
         </ul>
       </nav>
     </div>

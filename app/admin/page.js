@@ -1,7 +1,7 @@
 export default function Admin() {
   return (
     <div> 
-      protected route
+      მთავარი გვერდი
     </div>
   )
 }
