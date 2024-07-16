@@ -1,7 +1,12 @@
+export const metadata = {
+  title: 'ადმინპანელი - გორითაუერსი',
+  description: 'გორითაურსი',
+}
+
 export default function Admin() {
   return (
     <div> 
-      მთავარი გვერდი
+      სამართავი პანელი
     </div>
   )
 }

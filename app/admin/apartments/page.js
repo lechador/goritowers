@@ -3,6 +3,11 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 
+export const metadata = {
+  title: 'ადმინპანელი - ბინები - გორითაუერსი',
+  description: 'გორითაურსი',
+}
+
 export default function Test() {
   const [apartments, setApartments] = useState([])
   const [filteredApartments, setFilteredApartments] = useState([])

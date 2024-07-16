@@ -2,6 +2,11 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
 
+export const metadata = {
+    title: 'პარამეტრები - გორითაუერსი',
+    description: 'გორითაურსი',
+  }
+
 export default function Settings() {
     const [settings, setSettings] = useState([])
     const [editing, setEditing] = useState(null)
@@ -24,43 +29,47 @@ export default function Settings() {
     }, [])
 
     return (
-        <div className="container mx-auto p-4">
-            <h1 className="text-2xl font-bold mb-4">პარამეტრები</h1>
-            <div className="grid grid-cols-1 gap-4">
+        <div className="container mx-auto p-6 bg-gray-100 min-h-screen">
+            <h1 className="text-3xl font-bold mb-6 text-gray-800">პარამეტრები</h1>
+            <div className="bg-white shadow-md rounded-lg p-6">
                 {settings && settings.map(setting => (
-                    <div key={setting._id} className="p-4 border rounded shadow">
+                    <div key={setting._id} className="mb-4 p-4 border rounded-lg shadow-sm bg-gray-50">
                         {editing === setting._id ? (
-                            <>
+                            <div className="flex flex-col space-y-4">
                                 <input 
                                     type="text"
-                                    className="border p-2 rounded w-full"
+                                    className="border p-3 rounded w-full"
                                     value={newSettingValue}
                                     onChange={(e) => setNewSettingValue(e.target.value)}
                                 />
-                                <button 
-                                    className="mt-2 bg-blue-500 text-white px-4 py-2 rounded"
-                                    onClick={() => updateSetting(setting._id)}
-                                >
-                                    შენახვა
-                                </button>
-                                <button 
-                                    className="mt-2 bg-gray-500 text-white px-4 py-2 rounded ml-2"
-                                    onClick={() => { setEditing(null); setNewSettingValue("") }}
-                                >
-                                    გაუქმება
-                                </button>
-                            </>
+                                <div className="flex space-x-2">
+                                    <button 
+                                        className="bg-blue-600 text-white px-4 py-2 rounded shadow hover:bg-blue-700"
+                                        onClick={() => updateSetting(setting._id)}
+                                    >
+                                        შენახვა
+                                    </button>
+                                    <button 
+                                        className="bg-gray-600 text-white px-4 py-2 rounded shadow hover:bg-gray-700"
+                                        onClick={() => { setEditing(null); setNewSettingValue("") }}
+                                    >
+                                        გაუქმება
+                                    </button>
+                                </div>
+                            </div>
                         ) : (
-                            <>
-                                <div className="font-medium">{setting.setting_name}</div>
-                                <div className="text-gray-600">{setting.setting_value}</div>
+                            <div className="flex justify-between items-center">
+                                <div>
+                                    <div className="text-lg font-semibold text-gray-700">{setting.setting_name}</div>
+                                    <div className="text-gray-500">{setting.setting_value}</div>
+                                </div>
                                 <button 
-                                    className="mt-2 bg-green-500 text-white px-4 py-2 rounded"
+                                    className="bg-green-600 text-white px-4 py-2 rounded shadow hover:bg-green-700"
                                     onClick={() => { setEditing(setting._id); setNewSettingValue(setting.setting_value) }}
                                 >
                                     რედაქტირება
                                 </button>
-                            </>
+                            </div>
                         )}
                     </div>
                 ))}
