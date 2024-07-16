@@ -8,23 +8,30 @@ export const metadata = {
     description: 'გორითაურსი',
 }
 
-export default async function page() {
-  const lineOne = await Setting.findById("669696d7b3a6f8bc5697c075")
-  const lineTwo = await Setting.findById("669696f7b3a6f8bc5697c076")
-  const lineThree = await Setting.findById("66969743b3a6f8bc5697c077")
-  const lineFour = await Setting.findById("66969775b3a6f8bc5697c078")
-  const oneVal = lineOne.setting_value
-  const twoVal = lineTwo.setting_value
-  const threeVal = lineThree.setting_value
-  const FourVal = lineFour.setting_value
+export default async function About() {
+  const settings = await Promise.all([
+    Setting.findById("669696d7b3a6f8bc5697c075"),
+    Setting.findById("669696f7b3a6f8bc5697c076"),
+    Setting.findById("66969743b3a6f8bc5697c077"),
+    Setting.findById("66969775b3a6f8bc5697c078")
+  ]);
+
+  const [lineOne, lineTwo, lineThree, lineFour] = settings;
+
+  // Optional: Add error handling in case any setting is not found
+  if (!lineOne || !lineTwo || !lineThree || !lineFour) {
+    // Handle error accordingly
+    throw new Error("One or more settings could not be retrieved");
+  }
+
   return (
     <>
       <ComponentTitle title="კომპანიის შესახებ" />
-      <TextComponent text={oneVal} theme='garden' />
-      <TextComponent text={twoVal} theme='garden' />
-      <TextComponent text={threeVal} theme='garden' />
-      <TextComponent text={FourVal} theme='garden' />
-      <ImageGallery theme='dark' />
+      <TextComponent text={lineOne.setting_value} theme="garden" />
+      <TextComponent text={lineTwo.setting_value} theme="garden" />
+      <TextComponent text={lineThree.setting_value} theme="garden" />
+      <TextComponent text={lineFour.setting_value} theme="garden" />
+      <ImageGallery theme="dark" />
     </>
   )
 }
