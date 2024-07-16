@@ -32,7 +32,7 @@ export default function Settings() {
                     <div key={setting._id} className="mb-4 p-4 border rounded-lg shadow-sm bg-gray-50">
                         {editing === setting._id ? (
                             <div className="flex flex-col space-y-4">
-                                <input 
+                                <textarea 
                                     type="text"
                                     className="border p-3 rounded w-full"
                                     value={newSettingValue}
