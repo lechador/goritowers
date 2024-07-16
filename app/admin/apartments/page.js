@@ -3,12 +3,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 
-export const metadata = {
-  title: 'ადმინპანელი - ბინები - გორითაუერსი',
-  description: 'გორითაურსი',
-}
-
-export default function Test() {
+export default function AdminApartments() {
   const [apartments, setApartments] = useState([])
   const [filteredApartments, setFilteredApartments] = useState([])
   const [currentPage, setCurrentPage] = useState(1)
