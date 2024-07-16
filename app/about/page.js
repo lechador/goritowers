@@ -2,6 +2,7 @@ import Setting from "@/models/Setting"
 import ComponentTitle from "../components/componentTitle"
 import ImageGallery from "../components/imageGallery"
 import TextComponent from "../components/textComponent"
+import dbConnect from "@/lib/dbConnect"
 
 export const metadata = {
     title: 'კომპანიის შესახებ - გორითაუერსი',
@@ -9,6 +10,7 @@ export const metadata = {
 }
 
 export default async function About() {
+  await dbConnect()
   const settings = await Promise.all([
     Setting.findById("669696d7b3a6f8bc5697c075"),
     Setting.findById("669696f7b3a6f8bc5697c076"),
