@@ -64,7 +64,7 @@ export default function HomeOngoingProject() {
                                   </svg>
                                 </div>
                               </div>
-                              <div className="ml-4 flex items-center flex-col">
+                              <div className="ml-4 flex items-stretch flex-col">
                                 <h4 className="text-3xl font-medium text-defaultOrange">{item.title}</h4>
                                 {
                                   item.title2 && (
