@@ -19,6 +19,7 @@
     "mongoose": "^7.4.4",
     "next": "13.4.16",
     "next-auth": "^4.24.5",
+    "next-intl": "^3.17.2",
     "next-nprogress-bar": "^2.1.2",
     "nextjs-progressbar": "^0.0.16",
     "nodemailer": "^6.9.7",

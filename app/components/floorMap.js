@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { fabric } from 'fabric';
 import { useRouter } from 'next/navigation';
 
-const FabricFloorMap = ({block}) => {
+const FabricFloorMap = ({block, locale}) => {
   const router = useRouter()
   const hoverColor = 'rgba(255, 88, 1, 0.6)';
   useEffect(() => {
@@ -196,7 +196,7 @@ const FabricFloorMap = ({block}) => {
       });
 
       polygon.on('mousedown', () => {
-        router.push(`/project/${block}/${polygonFloors[index]}`)
+        router.push(`/${locale}/project/${block}/${polygonFloors[index]}`)
       });
     });
   }, []);

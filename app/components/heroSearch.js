@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import axios from "axios";
 
-export default function HeroSearch() {
+export default function HeroSearch({locale}) {
     const router = useRouter()
     const [searchData, setSearchData] = useState();
     const [minArea, setMinArea] = useState(50);
@@ -99,7 +99,7 @@ export default function HeroSearch() {
                                                 <tr
                                                     key={apartment._id} 
                                                     className="text-center cursor-pointer"
-                                                    onClick={() => router.push(`/project/${apartment.block_id}/${apartment.floor_id}/${apartment._id}`)}
+                                                    onClick={() => router.push(`/${locale}/project/${apartment.block_id}/${apartment.floor_id}/${apartment._id}`)}
                                                     data-theme="garden"
                                                 >
                                                     <td className="px-4">{apartment.project_name}</td>

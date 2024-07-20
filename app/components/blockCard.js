@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
-export default function BlockCard({block, status, aptMax, aptSold, image, block_id}) {
+export default function BlockCard({block, status, aptMax, aptSold, image, block_id, locale}) {
   return (
     status ? (
-      <Link href={`/project/${block_id}`}>
+      <Link href={`/${locale}/project/${block_id}`}>
         <div className="card w-80 md:w-96 bg-base-100 shadow-xl image-full lg:mx-4 my-4 cursor-pointer">
           <figure><img src={image} alt="image" /></figure>
           <div className="card-body">

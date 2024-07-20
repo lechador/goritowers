@@ -1,7 +1,7 @@
 'use client'
 import { useRouter } from "next/navigation"
 
-export default function SelectApartment({params, apartments}) {
+export default function SelectApartment({params, apartments, locale}) {
     const router = useRouter()
 
     // Sort apartments by apartment_number
@@ -12,7 +12,7 @@ export default function SelectApartment({params, apartments}) {
             <select
                 className="select w-full max-w-xs"
                 defaultValue='აირჩიე ბინა'
-                onChange={(e) => router.push(`/project/${params.block}/${params.floor}/${e.target.value}`)}
+                onChange={(e) => router.push(`/${locale}/project/${params.block}/${params.floor}/${e.target.value}`)}
             >
                 <option disabled>აირჩიე ბინა</option>
                 {sortedApartments.map((apt) => (

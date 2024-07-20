@@ -3,11 +3,12 @@
 import { useEffect } from 'react';
 import { fabric } from 'fabric';
 import { useRouter } from 'next/navigation';
-import { FirstFloor, SecondFloor, ThirdFloor, Fourth8Floor, Fifth7Floor, Nineth14Floor, mobileFloor1 } from '../polygons';
+import { FirstFloor, SecondFloor, ThirdFloor, Fourth8Floor, Fifth7Floor, Nineth14Floor, mobileFloor1 } from '../[locale]/polygons';
 import GetWindowWidth from './getWidth';
 
 
-const FabricApartmentMap = ({params, apartments, floor}) => {
+
+const FabricApartmentMap = ({params, apartments, floor, locale}) => {
   const size = GetWindowWidth()
     const sortedApartments = [...apartments].sort((a, b) => a.apartment_number - b.apartment_number);
   const router = useRouter()
@@ -58,10 +59,10 @@ const FabricApartmentMap = ({params, apartments, floor}) => {
       });
 
       polygon.on('mousedown', () => {
-        router.push(`/project/${params.block}/${params.floor}/${sortedApartments[polygonFloors[index]-1]._id}`)
+        router.push(`/${locale}/project/${params.block}/${params.floor}/${sortedApartments[polygonFloors[index]-1]._id}`)
       });
       polygon.on('touchstart', (event) => {
-        router.push(`/project/${params.block}/${params.floor}/${sortedApartments[polygonFloors[index]-1]._id}`)
+        router.push(`/${locale}/project/${params.block}/${params.floor}/${sortedApartments[polygonFloors[index]-1]._id}`)
     });
       
     });

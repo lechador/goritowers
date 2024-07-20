@@ -2,16 +2,16 @@
 import { useRouter } from "next/navigation";
 import { BsArrowDownCircle, BsArrowUpCircle } from "react-icons/bs";
 
-export default function FloorSwitch({floor}) {
+export default function FloorSwitch({floor, locale}) {
     const router = useRouter()
     const downFloor = () => { 
         if(floor>1){
-            router.push(`/project/1/${floor-1}`)
+            router.push(`/${locale}/project/1/${floor-1}`)
         }
     }
     const upFloor = () => { 
         if(floor<14){ 
-            router.push(`/project/1/${floor+1}`)
+            router.push(`/${locale}/project/1/${floor+1}`)
         }
     }
     return (
