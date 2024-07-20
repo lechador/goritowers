@@ -24,7 +24,7 @@ export const metadata = {
 };
 
 
-const locales = ['ka', 'en'];
+const locales = ['ka', 'en', 'ru'];
 
 
 export default async function LocaleLayout({ children, params: { locale } }) {

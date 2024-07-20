@@ -1,13 +1,13 @@
 {
-    "Navigation": {
+  "Navigation": {
       "home": "Home Page", 
       "CurrentProject": "Current Project", 
       "AboutCompany": "About Company",
       "Contact": "Contact", 
       "RequestCall": "Request Call"
     }, 
-    "LocaleSwitcher": { 
-      "label": "en",
-      "locale": "english"
-    }
+  "LocaleSwitcher": { 
+    "label": "ru", 
+    "locale": "rusian"
+  }
 }

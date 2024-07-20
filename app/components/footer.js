@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Footer() {
+export default function Footer({locale}) {
   return (
     <footer className="px-4 divide-y" data-theme='dark'>
       <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
@@ -12,17 +12,17 @@ export default function Footer() {
           <div className="space-y-3">
             <ul className="space-y-1">
               <li>
-                <Link href="/project">მიმდინარე პროექტი</Link>
+                <Link href={`/${locale}/project`}>მიმდინარე პროექტი</Link>
               </li>
             </ul>
           </div>
           <div className="space-y-3">
             <ul className="space-y-1">
               <li>
-                <Link href="/about">ჩვენს შესახებ</Link>
+                <Link href={`/${locale}/about`}>ჩვენს შესახებ</Link>
               </li>
               <li>
-                <Link href="/contact">კონტაქტი</Link>
+                <Link href={`/${locale}/contact`}>კონტაქტი</Link>
               </li>
             </ul>
           </div>

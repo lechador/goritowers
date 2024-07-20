@@ -12,7 +12,7 @@ const nextAuthMiddleware = withAuth({
 
 // Create Next-Intl middleware
 const intlMiddleware = createMiddleware({
-  locales: ['ka', 'en'],
+  locales: ['ka', 'en', 'ru'],
   defaultLocale: 'ka',
 });
 
@@ -29,5 +29,5 @@ export default async function customMiddleware(req) {
 
 // Export matcher configurations for both middlewares
 export const config = {
-  matcher: ['/admin/:path*', '/', '/(ka|en)/:path*'],
+  matcher: ['/admin/:path*', '/', '/(ka|en|ru)/:path*'],
 };

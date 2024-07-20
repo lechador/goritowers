@@ -1,5 +1,13 @@
 {
-    "HomePage": {
-      "title": "ზდაროვა"
-    }
+  "Navigation": {
+      "home": "მთავარი გვერდი", 
+      "CurrentProject": "მიმდინარე პროექტი", 
+      "AboutCompany": "კომპანიის შესახებ",
+      "Contact": "კონტაქტი", 
+      "RequestCall": "შეუკვეთე ზარი"
+    }, 
+  "LocaleSwitcher": { 
+    "label": "ka",
+    "locale": "ქართული"
   }
+}

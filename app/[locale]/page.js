@@ -4,7 +4,6 @@ import Hero from "../components/hero"
 import HomeOngoingProject from "../components/homeOngoingProject"
 import RequestCall from "../components/requestCall"
 import {unstable_setRequestLocale} from 'next-intl/server';
-import {useTranslations} from 'next-intl';
 
 export const metadata = {
   title: 'გორითაუერსი',
@@ -12,15 +11,13 @@ export const metadata = {
 }
 export default function Home({ params: { locale } }){
   unstable_setRequestLocale(locale);
-  const t = useTranslations('HomePage');
   return (
       <> 
-        {/* <div>{t('title')}</div> */}
         <Header locale={locale} />
         <Hero locale={locale} />
-        <HomeOngoingProject />
+        <HomeOngoingProject locale={locale} />
         <RequestCall showTitle={true} theme={'garden'} />
-        <Footer /> 
+        <Footer locale={locale} /> 
       </>
   )
 }

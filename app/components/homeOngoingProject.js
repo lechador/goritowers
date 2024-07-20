@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-export default function HomeOngoingProject() {
+export default function HomeOngoingProject({locale}) {
 
   const data = [
     {
@@ -37,7 +37,7 @@ export default function HomeOngoingProject() {
 
   return (
     <section data-theme="dark" className="cursor-pointer">
-      <Link href="/project">
+      <Link href={`/${locale}/project`}>
       <div className="container max-w-xl p-6 py-12 mx-auto md:space-y-12 lg:px-8 lg:max-w-7xl">
           <div>
             {/* <h2 className="text-3xl font-bold tracki text-center sm:text-5xl">მიმდინარე პროექტი</h2> */}
