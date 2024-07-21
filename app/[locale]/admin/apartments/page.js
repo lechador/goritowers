@@ -16,13 +16,13 @@ export default function AdminApartments() {
   })
 
   const getApartments = async () => {
-    const { data } = await axios.get('/api/admin')
+    const { data } = await axios.get('/api/aptsroute')
     setApartments(data.apartments)
     setFilteredApartments(data.apartments)
   }
 
   const handleStatusChange = async (id, currentState) => {
-    await axios.put('/api/admin', {
+    await axios.put('/api/aptsroute', {
       aptId: id,
       state: currentState
     })

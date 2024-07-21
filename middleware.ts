@@ -25,7 +25,7 @@ const authMiddleware = withAuth(
 );
 
 export default function middleware(req: NextRequest) {
-  const isAdminPage = req.nextUrl.pathname.startsWith('/admin');
+  const isAdminPage = req.nextUrl.pathname.match(/^\/(ka|en|ru)?\/admin/);
 
   if (isAdminPage) {
     return (authMiddleware as any)(req);
@@ -35,7 +35,11 @@ export default function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!api|_next|.*\\..*).*)', 
-            '/admin/:path*',
-            '/:locale/admin/:path*']
+  matcher: [
+    '/((?!api|_next|.*\\..*).*)',
+    '/((?!api|_next|admin|.*\\..*).*)',
+    '/:locale((?!api|_next|admin|.*\\..*).*)',
+    '/admin/:path*',
+    '/:locale/admin/:path*'
+  ],
 };
