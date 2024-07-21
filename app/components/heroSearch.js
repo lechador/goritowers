@@ -3,8 +3,10 @@ import RangeInput from "./rangeInput";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import axios from "axios";
+import { useTranslations } from "next-intl";
 
 export default function HeroSearch({locale}) {
+    const t = useTranslations('Search')
     const router = useRouter()
     const [searchData, setSearchData] = useState();
     const [minArea, setMinArea] = useState(50);
@@ -38,29 +40,29 @@ export default function HeroSearch({locale}) {
     <div className="card-body">
         <form onSubmit={handleSearch}>
             <div className="flex flex-row">
-                <div>
+                <div className="w-full">
                     <RangeInput
-                        title="მინიმალური ფართი"
+                        title={t('minArea')}
                         min={40}
 
                                             max={100} 
                                             color={"white"} 
-                                            unit={'კვ.მ'} 
+                                            unit={t('unit')} 
                                             setMinArea={setMinArea}
                                         />
                                         <RangeInput 
-                                            title="მაქსიმალური ფართი" 
+                                            title={t('maxArea')} 
                                             min={70} 
                                             max={150} 
                                             color={"white"} 
-                                            unit={'კვ.მ'} 
+                                            unit={t('unit')} 
                                             setMaxArea={setMaxArea}
                                         />
                                     </div>
                                 </div>
 
                                 <div> 
-                                    <h1 className="text-md text-white">საძინებლების რაოდენობა</h1>
+                                    <h1 className="text-md text-white">{t('bedrooms')}</h1>
                                     <div>
                                     
                                     <div className="form-control mx-10">
@@ -78,7 +80,7 @@ export default function HeroSearch({locale}) {
                                     </div>
                                     </div>
                                 </div>
-                                <button className="btn btn-outline text-2xl">ბინის ძებნა</button>
+                                <button className="btn btn-outline text-2xl">{t('button')}</button>
                             </form>
                             <dialog id="my_modal_4" className="modal" data-theme="dark">
                                 <form method="dialog " className="modal-box modal-box w-11/12 max-w-5xl">
@@ -86,10 +88,10 @@ export default function HeroSearch({locale}) {
                                     <table className="border-separate border-spacing-y-3">
                                         <thead>
                                             <tr>
-                                                <th className="py-2 px-4">პროექტი</th>
-                                                <th className="py-2 px-4">სართული</th>
-                                                <th className="py-2 px-4">ბინა</th>
-                                                <th className="py-2 px-4">კვ.მ.</th>
+                                                <th className="py-2 px-4">{t('project')}</th>
+                                                <th className="py-2 px-4">{t('floor')}</th>
+                                                <th className="py-2 px-4">{t('Apartment')}</th>
+                                                <th className="py-2 px-4">{t('unit')}</th>
                                                 {/* <th className="py-2 px-4"></th> */}
                                             </tr>
                                         </thead>

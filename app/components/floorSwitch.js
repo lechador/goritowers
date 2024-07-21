@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import { BsArrowDownCircle, BsArrowUpCircle } from "react-icons/bs";
 
-export default function FloorSwitch({floor, locale}) {
+export default function FloorSwitch({floor, locale, floorTr}) {
     const router = useRouter()
     const downFloor = () => { 
         if(floor>1){
@@ -17,7 +17,7 @@ export default function FloorSwitch({floor, locale}) {
     return (
         <div className="w-full flex justify-around"> 
             <span className="cursor-pointer" onClick={downFloor}><BsArrowDownCircle size={30} /></span>
-                <h2 className="text-3xl text-teal-500	font-bold">სართული {floor}</h2>
+                <h2 className="text-3xl text-teal-500	font-bold">{floorTr} {floor}</h2>
             <span className="cursor-pointer" onClick={upFloor}><BsArrowUpCircle size={30} /></span>
         </div>
     )

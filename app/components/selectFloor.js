@@ -1,7 +1,7 @@
 'use client'
 import { useRouter } from "next/navigation"
 
-export default function SelectFloor({floors, block, locale}) {
+export default function SelectFloor({floors, block, locale, choose}) {
     const router = useRouter()
 
     const sortedFloors = [...floors].sort((a, b) => a.floor_id - b.floor_id);
@@ -10,10 +10,10 @@ export default function SelectFloor({floors, block, locale}) {
         <div className="flex flex-col items-center my-4">
             <select
                 className="select w-full max-w-xs"
-                defaultValue='აირჩიე სართული'
+                defaultValue={choose}
                 onChange={(e) => router.push(`/${locale}/project/${block}/${e.target.value}`)}
             >
-                <option disabled>აირჩიე სართული</option>
+                <option disabled>{choose}</option>
                 {sortedFloors.map((floor) => (
                     <option key={floor.floor_id}>{floor.floor_id}</option>
                 ))}

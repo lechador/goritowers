@@ -2,11 +2,13 @@
 import { register } from 'swiper/element/bundle';
 import ComponentTitle from './componentTitle';
 import 'swiper/swiper-bundle.css';
+import { useTranslations } from 'next-intl';
 register();
 
 
 
 export default function ImageGallery({theme}) {
+    const t = useTranslations("Gallery")
     const images = [
         '/gallery/4_result.webp',
         '/gallery/8_result.webp',
@@ -24,7 +26,7 @@ export default function ImageGallery({theme}) {
     ]
     return (
         <div className='pt-6 pb-10 px-4 ' data-theme={theme}> 
-            <ComponentTitle title="გალერეა" />
+            <ComponentTitle title={t('title')} />
             <swiper-container
                     slides-per-view="2"
                     navigation="true" scrollbar="true"

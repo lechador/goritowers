@@ -1,38 +1,22 @@
-import Setting from "@/models/Setting"
 import ImageGallery from "@/app/components/imageGallery"
 import TextComponent from "@/app/components/textComponent"
-import dbConnect from "@/lib/dbConnect"
 import ComponentTitle from "@/app/components/componentTitle"
+import { useTranslations } from "next-intl"
 
 export const metadata = {
     title: 'კომპანიის შესახებ - გორითაუერსი',
     description: 'გორითაურსი',
 }
 
-export default async function About() {
-  await dbConnect()
-  const settings = await Promise.all([
-    Setting.findById("669696d7b3a6f8bc5697c075"),
-    Setting.findById("669696f7b3a6f8bc5697c076"),
-    Setting.findById("66969743b3a6f8bc5697c077"),
-    Setting.findById("66969775b3a6f8bc5697c078")
-  ]);
-
-  const [lineOne, lineTwo, lineThree, lineFour] = settings;
-
-  // Optional: Add error handling in case any setting is not found
-  if (!lineOne || !lineTwo || !lineThree || !lineFour) {
-    // Handle error accordingly
-    throw new Error("One or more settings could not be retrieved");
-  }
-
+export default function About() {
+  const t = useTranslations("About")
   return (
     <>
-      <ComponentTitle title="კომპანიის შესახებ" />
-      <TextComponent text={lineOne.setting_value} theme="garden" />
-      <TextComponent text={lineTwo.setting_value} theme="garden" />
-      <TextComponent text={lineThree.setting_value} theme="garden" />
-      <TextComponent text={lineFour.setting_value} theme="garden" />
+      <ComponentTitle title={t('title')} />
+      <TextComponent text={t('line_1')} theme="garden" />
+      <TextComponent text={t('line_2')} theme="garden" />
+      <TextComponent text={t('line_3')} theme="garden" />
+      <TextComponent text={t('line_4')} theme="garden" />
       <ImageGallery theme="dark" />
     </>
   )

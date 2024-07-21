@@ -1,26 +1,13 @@
-import FloorSwitch from "@/app/components/floorSwitch";
-import SelectApartment from "@/app/components/selectApartment";
-import FabricApartmentMap from "@/app/components/selectApartmentMap";
-import axios from "axios";
-import { notFound } from 'next/navigation'
-import {unstable_setRequestLocale} from 'next-intl/server';
 
-export default async function page({params}) {
+import {unstable_setRequestLocale} from 'next-intl/server';
+import AsyncFloor from './async';
+import { useTranslations } from 'next-intl';
+
+export default function FloorHome({params}) {
   unstable_setRequestLocale(params.locale);
-  const floorData = await axios.get(`${process.env.NEXT_PUBLIC_VERCEL_ENV=='production' ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` : 'http://localhost:3000'}/api/blocks/${params.block}/floors/${params.floor}`);
-  const floor = floorData.data.floor
-  const apartments = floorData.data.apartments
-  if(!floor){
-    notFound()
-  }
+  const t = useTranslations("Floor")
+  
   return (
-    <div>
-        <div className="flex flex-col items-center justify-center py-6" data-theme="dark"> 
-            <h1 className="text-4xl font-bold mb-4">{floor.block_name} ბლოკი</h1>
-            <FloorSwitch floor={floor.floor_id} locale={params.locale} />
-        </div>
-        <SelectApartment params={params} apartments={apartments} locale={params.locale} />
-        <FabricApartmentMap params={params} apartments={apartments} floor={floor} locale={params.locale} />
-    </div>
+    <AsyncFloor params={params} blockTr={t('block')} floorTr={t('floor')} chooseTr={t('choose')} aptTr={t('apt')} />
   )
 }

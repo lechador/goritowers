@@ -1,7 +1,9 @@
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer({locale}) {
+  const t = useTranslations('Footer')
   return (
     <footer className="px-4 divide-y" data-theme='dark'>
       <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
@@ -12,17 +14,17 @@ export default function Footer({locale}) {
           <div className="space-y-3">
             <ul className="space-y-1">
               <li>
-                <Link href={`/${locale}/project`}>მიმდინარე პროექტი</Link>
+                <Link href={`/${locale}/project`}>{t('CurrentProject')}</Link>
               </li>
             </ul>
           </div>
           <div className="space-y-3">
             <ul className="space-y-1">
               <li>
-                <Link href={`/${locale}/about`}>ჩვენს შესახებ</Link>
+                <Link href={`/${locale}/about`}>{t('AboutCompany')}</Link>
               </li>
               <li>
-                <Link href={`/${locale}/contact`}>კონტაქტი</Link>
+                <Link href={`/${locale}/contact`}>{t('Contact')}</Link>
               </li>
             </ul>
           </div>
@@ -42,7 +44,7 @@ export default function Footer({locale}) {
           </div>
         </div>
       </div>
-      <div className="py-6 text-sm text-center dark:text-gray-400">© 2024 AG Development. ყველა უფლება დაცულია.</div>
+      <div className="py-6 text-sm text-center dark:text-gray-400">© 2024 AG Development. {t('Rights')}</div>
     </footer>
   )
 }
