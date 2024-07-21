@@ -7,7 +7,8 @@ const publicPages = ['/', '/login'];
  
 const intlMiddleware = createMiddleware({
   locales: locales,
-  defaultLocale: 'ka'
+  defaultLocale: 'ka', 
+  localeDetection: false
 });
  
 const authMiddleware = withAuth(
