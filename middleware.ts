@@ -3,7 +3,7 @@ import createMiddleware from 'next-intl/middleware';
 import {NextRequest} from 'next/server';
 
 const locales = ['ka', 'en', 'ru']
-const publicPages = ['/', '/login', '/test', '/project/:path*', '/about', '/contact'];
+const publicPages = ['/', '/login', '/test', '/project', '/about', '/contact'];
  
 const intlMiddleware = createMiddleware({
   locales: locales,
@@ -12,9 +12,6 @@ const intlMiddleware = createMiddleware({
 });
  
 const authMiddleware = withAuth(
-  // Note that this callback is only invoked if
-  // the `authorized` callback has returned `true`
-  // and not for pages listed in `pages`.
   function onSuccess(req) {
     return intlMiddleware(req);
   },
