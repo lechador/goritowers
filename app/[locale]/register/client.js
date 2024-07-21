@@ -17,7 +17,7 @@ export default function ClientRegister() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const response = await axios.post("https://goritowers.ge/api/register", {
+        const response = await fetch.post("https://goritowers.ge/api/register", {
             email: email,
             password: password
         })
