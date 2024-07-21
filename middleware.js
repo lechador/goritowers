@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+
 import { withAuth } from 'next-auth/middleware';
 import createMiddleware from 'next-intl/middleware';
 
@@ -14,14 +14,12 @@ const nextAuthMiddleware = withAuth({
 const intlMiddleware = createMiddleware({
   locales: ['ka', 'en', 'ru'],
   defaultLocale: 'ka',
+  localeDetection: false
 });
 
 // Custom middleware that calls both NextAuth and Next-Intl middlewares
 export default async function customMiddleware(req) {
-  // First run NextAuth middleware
   let response = await nextAuthMiddleware(req);
-
-  // Then run Next-Intl middleware
   response = await intlMiddleware(req);
 
   return response;
