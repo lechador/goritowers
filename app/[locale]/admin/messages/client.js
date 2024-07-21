@@ -21,7 +21,7 @@ export default function AdminMessagesClient({locale}) {
     const updateMessage = async () => {
         try {
             const nestedKey = `${editing.key}.${editing.subKey}`;
-            await axios.put(`/api/messages`, { nestedKey, newValue: newMessageValue });
+            await axios.put(`/api/messages`, { nestedKey, newValue: newMessageValue, locale });
             getMessages();
             setEditing({ key: null, subKey: null });
             setNewMessageValue("");

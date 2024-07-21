@@ -23,10 +23,10 @@ export async function GET(request) {
 export async function PUT(request) {
     try {
         await dbConnect()
-        
-        // Parse the incoming request data
-        const { newValue, nestedKey } = await request.json();
 
+        // Parse the incoming request data
+        const { newValue, nestedKey, locale } = await request.json();
+        
         // Check for valid data
         if (!newValue || !nestedKey) {
             return NextResponse.json({ message: "Invalid data" }, { status: 400 });
@@ -36,7 +36,7 @@ export async function PUT(request) {
         const [key, subKey] = nestedKey.split('.');
 
         // Find the single document
-        const messageDoc = await Message.findOne({});
+        const messageDoc = await Message.findOne({locale: locale});
         if (!messageDoc) {
             return NextResponse.json({ message: "Message document not found" }, { status: 404 });
         }
