@@ -17,14 +17,27 @@ export default function ClientRegister() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const response = await fetch.post("https://goritowers.ge/api/register", {
-            email: email,
-            password: password
-        })
-        console.log(response)
-    } catch (error) {
-        console.log(error)
-    }
+      const response = await fetch("https://goritowers.ge/api/register", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+              email: email,
+              password: password,
+          }),
+      });
+  
+      if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+  
+      const data = await response.json();
+      console.log(data);
+  } catch (error) {
+      console.log(error);
+  }
+  
   };
   return (
     <form onSubmit={handleSubmit} className="max-w-md mx-auto">

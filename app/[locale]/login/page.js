@@ -1,5 +1,5 @@
-import LoginClient from "./client";
 import {unstable_setRequestLocale} from 'next-intl/server';
+import LoginClient from './client';
 const Login = ({params: {locale}}) => {
   
   unstable_setRequestLocale(locale);
