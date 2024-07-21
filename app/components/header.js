@@ -1,7 +1,6 @@
 import Link from "next/link";
 import CallModal from "./callModal";
 import ScrollToTop from "./scrollToTop";
-import LanguageSwitcher from "./languageSwitch";
 import {useTranslations} from 'next-intl';
 
 export default function Header({locale}) {
@@ -30,8 +29,7 @@ export default function Header({locale}) {
     <li><Link href={`/${locale}/contact`}>{t('Contact')}</Link></li>
     </ul>
   </div>
-  <LanguageSwitcher locale={locale} />
-  <CallModal />
+  <CallModal locale={locale} />
 </div>
   )
 }

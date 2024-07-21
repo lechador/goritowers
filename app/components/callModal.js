@@ -1,11 +1,13 @@
 'use client'
 import {useTranslations} from 'next-intl';
 import RequestCall from "./requestCall"
+import LocaleSwitcher from './languageSwitch';
 
-export default function CallModal() {
+export default function CallModal({locale}) {
   const t = useTranslations('Navigation');
   return (
     <div className="navbar-end">
+        <LocaleSwitcher locale={locale} />
         <a className="btn bg-defaultOrange text-white hover:bg-defaultOrange" onClick={()=>window.my_modal_2.showModal()}>
         {t("RequestCall")}
         </a>
