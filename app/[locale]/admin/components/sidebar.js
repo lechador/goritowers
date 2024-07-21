@@ -16,8 +16,8 @@ const AdminSidebar = () => {
             </Link>
           </li>
           <li>
-            <Link className="hover:bg-gray-700 px-3 py-2 block" href="/admin/settings">
-              პარამეტრები
+            <Link className="hover:bg-gray-700 px-3 py-2 block" href="/admin/messages">
+              ტექსტები
             </Link>
           </li>
         </ul>
