@@ -5,7 +5,7 @@ import User from "@/models/User";
 
 async function login(credentials){ 
     try { 
-        dbConnect()
+        await dbConnect()
         const user = await User.findOne({email:credentials.email})
         if(!user) throw new Error("wrong credentials")
         if(credentials.password !== user.password) throw new Error("wrong Credentials");
