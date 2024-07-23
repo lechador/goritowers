@@ -1,7 +1,6 @@
 import dbConnect from "@/lib/dbConnect";
 import User from "@/models/User";
 import { NextResponse } from "next/server";
-import bcrypt from 'bcrypt'
 
 export async function POST(request){ 
     try {
@@ -11,9 +10,7 @@ export async function POST(request){
         if(alreadyExists){
             return NextResponse.json({message: "already registered"})
         }
-        const hashedPassword = await bcrypt.hash(password, 10)
-
-        await User.create({email, password: hashedPassword})
+        await User.create({email, password: password})
 
         return NextResponse.json({ message: "Succesfully created" });
     } catch (error) {

@@ -1,7 +1,6 @@
 import CredentialsProvider from "next-auth/providers/credentials";
 import NextAuth from "next-auth/next";
 import dbConnect from "@/lib/dbConnect";
-import bcrypt from 'bcrypt'
 import User from "@/models/User";
 
 async function login(credentials){ 
@@ -9,8 +8,7 @@ async function login(credentials){
         dbConnect()
         const user = await User.findOne({email:credentials.email})
         if(!user) throw new Error("wrong credentials")
-        const isCorrect = await bcrypt.compare(credentials.password, user.password)
-        if(!isCorrect) throw new Error("wrong Credentials");
+        if(credentials.password !== user.password) throw new Error("wrong Credentials");
         console.log(user)
         return user;
     } catch(error){ 
