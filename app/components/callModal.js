@@ -8,10 +8,10 @@ export default function CallModal({locale}) {
   return (
     <div className="navbar-end">
         <LocaleSwitcher locale={locale} />
-        <a className="btn bg-defaultOrange text-white hover:bg-defaultOrange" onClick={()=>window.my_modal_2.showModal()}>
+        <a className="btn bg-defaultOrange text-white hover:bg-defaultOrange" onClick={()=>window.my_modal_4.showModal()}>
         {t("RequestCall")}
         </a>
-        <dialog id="my_modal_2" className="modal">
+        <dialog id="my_modal_4" className="modal">
         <div method="dialog" className="modal-box w-11/12 max-w-5xl" data-theme="dark" >
             <RequestCall showTitle={false} theme={'dark'} /> 
         </div>

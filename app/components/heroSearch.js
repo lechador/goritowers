@@ -29,7 +29,7 @@ export default function HeroSearch({locale}) {
                 "bedrooms": checkedIndex+1
             });
             setSearchData(searchData.data.apartments);
-            window.my_modal_4.showModal();
+            window.my_modal_2.showModal();
         } catch (error) {
             console.error("Error fetching data:", error);
         }
@@ -82,10 +82,10 @@ export default function HeroSearch({locale}) {
                                 </div>
                                 <button className="btn btn-outline text-2xl">{t('button')}</button>
                             </form>
-                            <dialog id="my_modal_4" className="modal" data-theme="dark">
-                                <form method="dialog " className="modal-box modal-box w-11/12 max-w-5xl">
-                                <div className="block md:flex md:justify-center">
-                                    <table className="border-separate border-spacing-y-3">
+                            <dialog id="my_modal_2" className="modal" data-theme="dark">
+                                
+                                <div className="modal-box w-11/12 max-w-5xl">
+                                    <table className="border-separate border-spacing-y-3 w-full">
                                         <thead>
                                             <tr>
                                                 <th className="py-2 px-4">{t('project')}</th>
@@ -121,7 +121,8 @@ export default function HeroSearch({locale}) {
                                         </tbody>
                                     </table>
                                 </div>
-                                <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                                <form method="dialog" className="modal-backdrop">
+                                    <button>close</button>
                                 </form>
                             </dialog>
                         </div>

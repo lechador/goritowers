@@ -15,6 +15,11 @@ const ninoMtavruli = localFont({
   display: 'swap',
 });
 
+const firago = localFont({
+  src: '../firago-latin-400-normal.woff2',
+  display: 'swap',
+})
+
 export const metadata = {
   title: 'გორი თაუერსი',
   description: 'გორი თაუერსი - AG Development',
@@ -33,7 +38,7 @@ export default async function LocaleLayout({ children, params: { locale } }) {
 
   return (
     <html lang={locale} data-theme="light">
-      <body className={ninoMtavruli.className}>
+      <body className={locale == 'ka' ? ninoMtavruli.className : firago.className}>
         <NextIntlClientProvider messages={messages}>
           {children}
           <Nprogress />
