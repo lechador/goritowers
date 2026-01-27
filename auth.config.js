@@ -7,14 +7,14 @@ export const authConfig = {
         authorized({ auth, request: { nextUrl } }) {
             const isLoggedIn = !!auth?.user;
             const pathname = nextUrl.pathname;
-            const isAdminPage = pathname.startsWith('/admin') || 
-                              pathname.startsWith('/ka/admin') || 
-                              pathname.startsWith('/en/admin') || 
-                              pathname.startsWith('/ru/admin');
+            const isAdmin = /\/(ka|en|ru)?\/?admin/.test(pathname);
 
-            if (isAdminPage) {
+            if (isAdmin) {
                 if (isLoggedIn) return true;
-                return false; // Redirect to login
+                const locale = nextUrl.pathname.split('/')[1];
+                const targetLocale = ['ka', 'en', 'ru'].includes(locale) ? locale : 'ka';
+                const loginUrl = new URL(`/${targetLocale}/login`, nextUrl.origin);
+                return Response.redirect(loginUrl);
             }
             return true;
         },
