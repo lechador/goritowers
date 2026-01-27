@@ -1,13 +1,13 @@
-import axios from "axios";
 import { notFound } from 'next/navigation'
 import FabricFloorMap from "@/app/components/floorMap";
 import SelectFloor from "@/app/components/selectFloor";
 import TextComponent from "@/app/components/textComponent";
+import { getBlockData } from "@/lib/data";
 
 export default async function AsyncBlock({params, description, blockTr, text, choose}) {
-    const blockData = await axios.get(`${process.env.NEXT_PUBLIC_VERCEL_ENV=='production' ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` : 'http://localhost:3000'}/api/blocks/${params.block}`);
-    const block = blockData.data.block
-    const floors = blockData.data.floors
+    const data = await getBlockData(params.block);
+    if (!data) return notFound();
+    const { block, floors } = data;
   
     if(!block || !block.ongoing){
       notFound()

@@ -1,13 +1,8 @@
-import dynamic from 'next/dynamic'
 import ComponentTitle from "./componentTitle";
 import dbConnect from "@/lib/dbConnect"
 import Setting from "@/models/Setting"
 import { useTranslations } from 'next-intl';
-
-const LeafletMap = dynamic(() => import("./leafletMap"), {
-  loading: () => <p>loading...</p>,
-  ssr: false
-})
+import LeafletMap from "./DynamicLeafletMap";
 export default function LocationComponent() {
   const t = useTranslations("Location")
   return (

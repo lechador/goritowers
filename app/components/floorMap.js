@@ -1,13 +1,21 @@
 'use client';
 
-import { useEffect } from 'react';
-import { fabric } from 'fabric';
+import { useEffect, useRef } from 'react';
+import * as fabric from 'fabric';
 import { useRouter } from 'next/navigation';
 
 const FabricFloorMap = ({block, locale}) => {
   const router = useRouter()
+  const canvasRef = useRef(null);
   const hoverColor = 'rgba(255, 88, 1, 0.6)';
+  
   useEffect(() => {
+    // Cleanup existing canvas if it exists
+    if (canvasRef.current) {
+        canvasRef.current.dispose();
+        canvasRef.current = null;
+    }
+
     let canvasWidth = 1382;
     let canvasHeight = 1037;
     if(window.innerWidth<640){
@@ -16,6 +24,8 @@ const FabricFloorMap = ({block, locale}) => {
     }
 
     const canvas = new fabric.Canvas('floor-map-canvas', { width: canvasWidth, height: canvasHeight });
+    canvasRef.current = canvas;
+
     const polygons = [
       {
         points: [
@@ -199,6 +209,11 @@ const FabricFloorMap = ({block, locale}) => {
         router.push(`/${locale}/project/${block}/${polygonFloors[index]}`)
       });
     });
+
+    return () => {
+      canvas.dispose();
+      canvasRef.current = null;
+    };
   }, []);
 
   return (

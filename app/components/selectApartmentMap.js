@@ -1,7 +1,7 @@
 'use client';
 
-import { useEffect } from 'react';
-import { fabric } from 'fabric';
+import { useEffect, useRef } from 'react';
+import * as fabric from 'fabric';
 import { useRouter } from 'next/navigation';
 import { FirstFloor, SecondFloor, ThirdFloor, Fourth8Floor, Fifth7Floor, Nineth14Floor, mobileFloor1 } from '../[locale]/polygons';
 import GetWindowWidth from './getWidth';
@@ -12,8 +12,16 @@ const FabricApartmentMap = ({params, apartments, floor, locale}) => {
   const size = GetWindowWidth()
     const sortedApartments = [...apartments].sort((a, b) => a.apartment_number - b.apartment_number);
   const router = useRouter()
+  const canvasRef = useRef(null);
+
   useEffect(() => {
     if(size.width){ 
+        // Cleanup function to dispose of old canvas
+        if (canvasRef.current) {
+            canvasRef.current.dispose();
+            canvasRef.current = null;
+        }
+
     let canvasWidth = size.width>1024 ? 1200 : 320;
     let canvasHeight = size.width>1024 ? 1125 : 326;
     let selectedFloor;
@@ -35,35 +43,43 @@ const FabricApartmentMap = ({params, apartments, floor, locale}) => {
         } 
     }
     const canvas = new fabric.Canvas('floor-map-canvas', { width: canvasWidth, height: canvasHeight });
+    canvasRef.current = canvas;
+    
     const polygonFloors = [
       1,2,3,4,5,6,7,8,9,10,11,12,13,14
     ]
     selectedFloor.forEach((polygonData, index) => {
+      const aptIndex = polygonFloors[index] - 1;
+      const apt = sortedApartments[aptIndex];
+      const isSold = apt?.is_sold || false;
+
       const polygon = new fabric.Polygon(polygonData.points, {
         fill: polygonData.fill,
-        selectable: polygonData.selectable,
-        opacity: polygonData.opacity,
-        hoverCursor: 'pointer',
+        selectable: false, // Always false as we don't want selection box
+        opacity: 0,
+        hoverCursor: isSold ? 'not-allowed' : 'pointer',
       });
 
       canvas.add(polygon);
 
-      polygon.on('mouseover', () => {
-        polygon.set({ opacity: 1 });
-        canvas.renderAll();
-      });
+      if (!isSold && apt) {
+          polygon.on('mouseover', () => {
+            polygon.set({ opacity: 1 });
+            canvas.renderAll();
+          });
 
-      polygon.on('mouseout', () => {
-        polygon.set({ opacity: 0 });
-        canvas.renderAll();
-      });
+          polygon.on('mouseout', () => {
+            polygon.set({ opacity: 0 });
+            canvas.renderAll();
+          });
 
-      polygon.on('mousedown', () => {
-        router.push(`/${locale}/project/${params.block}/${params.floor}/${sortedApartments[polygonFloors[index]-1]._id}`)
-      });
-      polygon.on('touchstart', (event) => {
-        router.push(`/${locale}/project/${params.block}/${params.floor}/${sortedApartments[polygonFloors[index]-1]._id}`)
-    });
+          polygon.on('mousedown', () => {
+            router.push(`/${locale}/project/${params.block}/${params.floor}/${apt._id}`)
+          });
+          polygon.on('touchstart', (event) => {
+            router.push(`/${locale}/project/${params.block}/${params.floor}/${apt._id}`)
+        });
+      }
       
     });
   }

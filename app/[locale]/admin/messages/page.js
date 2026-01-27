@@ -1,8 +1,9 @@
-import {unstable_setRequestLocale} from 'next-intl/server';
+import {setRequestLocale} from 'next-intl/server';
 import AdminMessagesClient from './client';
 
-export default function Messages({params: {locale}}) {
-    unstable_setRequestLocale(locale);
+export default async function Messages({params}) {
+    const { locale } = await params;
+    setRequestLocale(locale);
     
     return (
         <div className="container mx-auto p-6 bg-gray-100 min-h-screen">

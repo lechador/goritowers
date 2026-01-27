@@ -1,11 +1,8 @@
 import LocationComponent from "@/app/components/locationComponent";
 import TextComponent from "@/app/components/textComponent";
 import dynamic from "next/dynamic";
-import {unstable_setRequestLocale} from 'next-intl/server';
-import { useTranslations } from "next-intl";
-const ImageGallery = dynamic(() => import("@/app/components/imageGallery"), {
-  ssr: false
-})
+import {setRequestLocale, getTranslations} from 'next-intl/server';
+import ImageGallery from "@/app/components/DynamicImageGallery";
 
 const ChooseBlock = dynamic(() => import("@/app/components/chooseBlock"))
 
@@ -13,10 +10,11 @@ export const metadata = {
   title: 'მიმდინარე პროექტი - გორითაუერსი',
   description: 'გორითაურსი',
 }
-export default function ProjectHome({params: { locale }}) {
-  unstable_setRequestLocale(locale); 
-  const t = useTranslations("Blocks")
-  const p = useTranslations("Project")
+export default async function ProjectHome({params}) {
+  const { locale } = await params;
+  setRequestLocale(locale); 
+  const t = await getTranslations({locale, namespace: "Blocks"})
+  const p = await getTranslations({locale, namespace: "Project"})
   return (
     <>
     <div className="relative w-full">

@@ -1,7 +1,6 @@
 import dbConnect from "@/lib/dbConnect";
 import Message from "@/models/Message";
 import Setting from "@/models/Setting";
-import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
 
 

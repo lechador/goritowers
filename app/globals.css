@@ -1,14 +1,19 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default, dark, garden, forest, fantasy, autumn;
+}
 
+@theme {
+  --color-defaultOrange: #ff5801;
 
-@layer utilities {
-    .min-h-35vw {
-      min-height: 35vw;
-    }
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+  --background-image-gradient-conic: conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops));
+}
 
-    .left-27vw {
-        left: 27vw;
-    }
+@utility min-h-35vw {
+  min-height: 35vw;
+}
+
+@utility left-27vw {
+  left: 27vw;
 }

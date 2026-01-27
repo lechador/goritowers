@@ -1,17 +1,18 @@
 import ImageGallery from "@/app/components/imageGallery"
 import TextComponent from "@/app/components/textComponent"
 import ComponentTitle from "@/app/components/componentTitle"
-import { useTranslations } from "next-intl"
-import {unstable_setRequestLocale} from 'next-intl/server';
+import { getTranslations } from "next-intl/server"
+import {setRequestLocale} from 'next-intl/server';
 
 export const metadata = {
     title: 'კომპანიის შესახებ - გორითაუერსი',
     description: 'გორითაურსი',
 }
 
-export default function About({ params: { locale } }) {
-  unstable_setRequestLocale(locale);
-  const t = useTranslations("About")
+export default async function About({ params }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({locale, namespace: "About"})
   return (
     <>
       <ComponentTitle title={t('title')} />

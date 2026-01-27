@@ -1,13 +1,14 @@
 import FloorSwitch from "@/app/components/floorSwitch";
 import SelectApartment from "@/app/components/selectApartment";
 import FabricApartmentMap from "@/app/components/selectApartmentMap";
-import axios from "axios";
 import { notFound } from 'next/navigation'
+import { getFloorData } from "@/lib/data";
 
 export default async function AsyncFloor({params, blockTr, floorTr, chooseTr, aptTr}) {
-    const floorData = await axios.get(`${process.env.NEXT_PUBLIC_VERCEL_ENV=='production' ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` : 'http://localhost:3000'}/api/blocks/${params.block}/floors/${params.floor}`);
-    const floor = floorData.data.floor
-    const apartments = floorData.data.apartments
+    const data = await getFloorData(params.block, params.floor);
+    if (!data) return notFound();
+    const { floor, apartments } = data;
+
     if(!floor){
         notFound()
     }

@@ -3,14 +3,15 @@ import Header from "../components/header";
 import Hero from "../components/hero"
 import HomeOngoingProject from "../components/homeOngoingProject"
 import RequestCall from "../components/requestCall"
-import {unstable_setRequestLocale} from 'next-intl/server';
+import {setRequestLocale} from 'next-intl/server';
 
 export const metadata = {
   title: 'გორითაუერსი',
   description: 'გორითაურსი',
 }
-export default function Home({ params: { locale } }){
-  unstable_setRequestLocale(locale);
+export default async function Home({ params }){
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
       <> 
         <Header locale={locale} />

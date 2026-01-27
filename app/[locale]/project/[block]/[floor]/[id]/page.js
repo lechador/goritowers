@@ -1,14 +1,14 @@
 import ApartmentBody from "@/app/components/apartmentBody";
 import ApartmentHead from "@/app/components/apartmentHead";
-import axios from "axios";
 import { notFound } from 'next/navigation'
-import {unstable_setRequestLocale} from 'next-intl/server';
+import {setRequestLocale} from 'next-intl/server';
+import { getApartmentData } from "@/lib/data";
 
 
 export default async function AptHome({ params }) {
-  unstable_setRequestLocale(params.locale);
-  const apartmentData = await axios.get(`${process.env.NEXT_PUBLIC_VERCEL_ENV=='production' ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` : 'http://localhost:3000'}/api/apartments/${params.id}`);
-  const apartment = apartmentData.data.apartment;
+  const { locale, id } = await params;
+  setRequestLocale(locale);
+  const apartment = await getApartmentData(id);
   if(!apartment) {
     notFound()
   }

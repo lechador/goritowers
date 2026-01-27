@@ -36,10 +36,18 @@ export async function POST(request) {
         filters['$and'] = bedroomFilters;
     }
 
+    const page = parseInt(data.page) || 1;
+    const limit = parseInt(data.limit) || 8;
+    const skip = (page - 1) * limit;
+
     try {
-        const apartments = await Apartment.find({ ...filters });
-        return NextResponse.json({ apartments });
+        const total = await Apartment.countDocuments(filters);
+        const apartments = await Apartment.find({ ...filters })
+            .skip(skip)
+            .limit(limit);
+            
+        return NextResponse.json({ apartments, total });
     } catch (error) {
-        return NextResponse.json({ message: "error" });
+        return NextResponse.json({ message: "error" }, { status: 500 });
     }
 }

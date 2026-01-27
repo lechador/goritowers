@@ -1,20 +1,17 @@
-import dynamic from "next/dynamic"
 import ContactComponent from "@/app/components/contactComponent"
-import { useTranslations } from "next-intl"
-import {unstable_setRequestLocale} from 'next-intl/server';
+import { getTranslations } from "next-intl/server"
+import {setRequestLocale} from 'next-intl/server';
+import LeafletMap from "@/app/components/DynamicLeafletMap";
 
 export const metadata = {
     title: 'კონტაქტი - გორითაუერსი',
     description: 'გორითაურსი',
 }
-const LeafletMap = dynamic(() => import("@/app/components/leafletMap"), {
-  loading: () => <p>loading...</p>,
-  ssr: false
-})
 
-export default function ContactPage({ params: { locale } }) {
-  unstable_setRequestLocale(locale);
-  const t = useTranslations('Contact')
+export default async function ContactPage({ params }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({locale, namespace: 'Contact'})
   return (
     <div>
       <ContactComponent 

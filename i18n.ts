@@ -6,23 +6,31 @@ import Message from './models/Message';
 const locales = ['ka', 'en', 'ru'];
 
 async function getMessages(locale) {
-  await dbConnect()
-  const messageDoc = await Message.findOne({ locale }).exec();
-  if (!messageDoc) {
-    return null;
+  try {
+    await dbConnect()
+    const messageDoc = await Message.findOne({ locale }).exec();
+    if (!messageDoc) {
+        console.log('Message doc not found for locale ' + locale);
+        return null;
+    }
+    return messageDoc.messages;
+  } catch (e) {
+    console.error('DB Error', e);
+    return {};
   }
-  return messageDoc.messages;
 }
 
-export default getRequestConfig(async ({locale}) => {
+export default getRequestConfig(async ({requestLocale}) => {
+  let locale = await requestLocale;
   
-  if (!locales.includes(locale as any)) notFound();
+  if (!locale || !locales.includes(locale)) {
+      locale = 'ka';
+  }
 
   const messages = await getMessages(locale);
-  if (!messages) {
-    notFound();
-  }
+  
   return {
-    messages,
+    locale,
+    messages: messages || {},
   };
 })

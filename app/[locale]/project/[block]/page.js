@@ -1,16 +1,16 @@
 
-import {unstable_setRequestLocale} from 'next-intl/server';
+import {setRequestLocale, getTranslations} from 'next-intl/server';
 import AsyncBlock from './async';
-import { useTranslations } from 'next-intl';
 
 
-
-export default function BlockHome({ params }) {
-  unstable_setRequestLocale(params.locale);
-  const t = useTranslations("Block")
+export default async function BlockHome({ params }) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const resolvedParams = await params;
+  const t = await getTranslations({locale, namespace: "Block"})
   return (
     <AsyncBlock 
-      params={params} 
+      params={resolvedParams} 
       blockTr={t('block')}
       text={t('text')}
       choose={t('choose')}

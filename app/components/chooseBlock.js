@@ -1,11 +1,11 @@
-import axios from "axios";
 import BlockCard from "./blockCard";
 import ComponentTitle from "./componentTitle";
+import { getBlocks } from "@/lib/data";
 
 
 export default async function ChooseBlock({locale, blockTranslation, onGoingTranslation, plannedTranslation, leftTranslation, aptTranslation, title}) {
-    const response = await axios.get(`${process.env.NEXT_PUBLIC_VERCEL_ENV == 'production' ? `https://goritowers.ge/` : 'http://localhost:3000'}/api/blocks`);
-    const data = response.data.blocks
+    let data = await getBlocks();
+    
     return (
       <div data-theme="garden" className="pt-2 pb-8">
         <ComponentTitle title={title} />

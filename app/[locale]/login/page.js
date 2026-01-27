@@ -1,8 +1,9 @@
-import {unstable_setRequestLocale} from 'next-intl/server';
+import {setRequestLocale} from 'next-intl/server';
 import LoginClient from './client';
-const Login = ({params: {locale}}) => {
+const Login = async ({params}) => {
+  const { locale } = await params;
   
-  unstable_setRequestLocale(locale);
+  setRequestLocale(locale);
  
   return (
     <div className="container mx-auto mt-8">

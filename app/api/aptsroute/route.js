@@ -1,6 +1,6 @@
 import dbConnect from "@/lib/dbConnect";
 import Apartment from "@/models/Apartment";
-import { getServerSession } from "next-auth";
+import { auth } from "@/auth";
 import { NextResponse } from "next/server";
 
 
@@ -12,7 +12,7 @@ export async function GET(){
 
 
 export async function PUT(request){ 
-    const session = await getServerSession()
+    const session = await auth()
     if(session){ 
         await dbConnect()
         const {aptId, state} = await request.json()
