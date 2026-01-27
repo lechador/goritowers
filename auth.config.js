@@ -6,7 +6,12 @@ export const authConfig = {
     callbacks: {
         authorized({ auth, request: { nextUrl } }) {
             const isLoggedIn = !!auth?.user;
-            const isAdminPage = nextUrl.pathname.match(/^\/(ka|en|ru)?\/admin/);
+            const pathname = nextUrl.pathname;
+            const isAdminPage = pathname.startsWith('/admin') || 
+                              pathname.startsWith('/ka/admin') || 
+                              pathname.startsWith('/en/admin') || 
+                              pathname.startsWith('/ru/admin');
+
             if (isAdminPage) {
                 if (isLoggedIn) return true;
                 return false; // Redirect to login

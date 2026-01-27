@@ -19,8 +19,6 @@ export default auth((req) => {
 export const config = {
   matcher: [
     '/((?!api|_next|.*\\..*).*)',
-    '/((?!api|_next|admin|.*\\..*).*)',
-    '/:locale((?!api|_next|admin|.*\\..*).*)',
     '/admin/:path*',
     '/:locale/admin/:path*'
   ],
